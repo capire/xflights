@@ -1,0 +1,6 @@
+.DS_Store
+*.db
+*.sql
+_out
+gen
+node_modules

@@ -1,0 +1,14 @@
+{
+  "name": "@capire/sflights",
+  "version": "1.0.0",
+  "description": "CAP sample for master data service",
+  "dependencies": {
+    "@sap/cds": ">=9",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-test": "*",
+    "@cap-js/sqlite": ">=2"
+  },
+  "license": "Apache-2.0"
+}
