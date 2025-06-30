@@ -1,6 +1,6 @@
 using { Currency, Country, cuid, sap.common.CodeList } from '@sap/cds/common';
 
-namespace sap.capire.sflight;
+namespace sap.capire.flights;
 
 entity Airlines : cuid {
   name     : String(44);
@@ -14,14 +14,15 @@ entity Airports : cuid {
   country : Country;
 }
 
-entity FlightConnections : cuid {
+entity FlightConnections {
+  key ID        : String(10); // e.g. LH4711
   airline       : Association to Airlines;
   departure     : Association to Airports;
   destination   : Association to Airports;
   departureTime : Time;
   arrivalTime   : Time;
   distance      : Integer; // in kilometers
-  code          : String = airline.ID || '-' || ID; // e.g. LH-4711
+  code          : String = airline.ID || ID; // e.g. LH-4711
 }
 
 entity Flights {

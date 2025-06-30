@@ -1,4 +1,4 @@
-using { sap.capire.sflight as my } from '../db/schema';
+using { sap, sap.capire.flights as my } from '../db/schema';
 
 @odata @rest @hcql
 service FlightsService {
@@ -7,4 +7,6 @@ service FlightsService {
   entity Airlines as projection on my.Airlines;
   entity Airports as projection on my.Airports;
   entity Supplements as projection on my.Supplements;
+  entity Currencies as projection on sap.common.Currencies;
+  entity Countries as projection on sap.common.Countries;
 }

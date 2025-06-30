@@ -1,6 +1,5 @@
 .DS_Store
-*.db
-*.sql
+*.sqlite
 _out
 gen
 node_modules
