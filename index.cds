@@ -1,1 +1,2 @@
-using from './srv/flights-service';
+// Public API for easy imports
+using from './srv/data-products';

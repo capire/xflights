@@ -22,7 +22,6 @@ entity FlightConnections {
   departureTime : Time;
   arrivalTime   : Time;
   distance      : Integer; // in kilometers
-  code          : String = airline.ID || ID; // e.g. LH-4711
 }
 
 entity Flights {
@@ -32,7 +31,7 @@ entity Flights {
   price           : Decimal(16,3);
   currency        : Currency;
   maximumSeats    : Integer;
-  occupiedSeats   : Integer;
+  occupiedSeats   : Integer; // partly transactional
   freeSeats       : Integer = maximumSeats - occupiedSeats;
 };
 
