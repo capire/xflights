@@ -19,11 +19,5 @@ service sap.capire.flights.data {
   entity Currencies as projection on sap.common.Currencies;
   entity Countries as projection on sap.common.Countries;
   entity Languages as projection on sap.common.Languages;
+
 }
-
-
-// ---------------------------------------------------------------
-// REVISIT: workaround for compiler limitation
-extend sap.capire.flights.data.Flights with columns {
-    maximumSeats - occupiedSeats as freeSeats : Integer,
-};
