@@ -1,6 +1,6 @@
 using { sap, sap.capire.flights as my } from '../db/schema';
 
-@odata @rest @hcql @dataproducts
+@odata @rest @hcql @data.product
 service sap.capire.flights.data {
 
   // Serve Flights data with inlined connection details
