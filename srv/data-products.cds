@@ -5,10 +5,10 @@ service sap.capire.flights.data {
 
   // Serve Flights data with inlined connection details
   entity Flights as projection on my.Flights {
-    key connection.ID as flightNumber, connection.{*} excluding { ID },
-    key flightDate, // preserve the flight date as a key
+    key flight.ID, flight.{*} excluding { ID },
+    key date, // preserve the flight date as a key
     *, // include all other fields from my.Flights
-  } excluding { connection };
+  } excluding { flight };
 
   // Serve Airlines, Airports, and Supplements data as is
   entity Airlines as projection on my.Airlines;

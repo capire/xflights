@@ -5,21 +5,22 @@ using {
 } from './data-products';
 
 aspect FlightKeys {
-  flightNumber : Flights:flightNumber;
-  flightDate : Flights:flightDate;
+  flightNumber : Flights:ID;
+  flightDate : Flights:date;
 }
 
 extend service FlightsService {
 
   // inbound events
-  event BookingCreated : FlightKeys { seats : array of Integer; }
   event BookingCancelled : BookingCreated {}
+  event BookingCreated : FlightKeys {
+    seats : array of Integer;
+  }
 
   // outbound events
-  event Flights.Updated : projection on Flights {
-    flightNumber,
-    flightDate,
-    occupiedSeats,
+  event Flights.Updated : FlightKeys {
+    occupied_seats : Integer;
+    free_seats : Integer;
   }
 
 }

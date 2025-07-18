@@ -12,16 +12,16 @@ GET {{odata}}
 GET {{odata}}/$metadata
 ###
 
-GET {{odata}}/FlightConnections
+GET {{odata}}/Connections
 ###
 
-GET {{rest}}/FlightConnections
+GET {{rest}}/Connections
 ###
 
-GET {{hcql}}/FlightConnections { ID, airline.name, departure.name, destination.name }
+GET {{hcql}}/Connections { ID, airline.name, departure.name, destination.name }
 ###
 
-GET {{hcql}}/FlightConnections
+GET {{hcql}}/Connections
 Content-Type: text/plain
 
 {
@@ -32,7 +32,7 @@ Content-Type: text/plain
 }
 ###
 
-GET {{hcql}}/FlightConnections {{cql}} {
+GET {{hcql}}/Connections {{cql}} {
   code,
   departure.name as ![from],
   destination.name as ![to],
