@@ -3,3 +3,9 @@
 _out
 gen
 node_modules
+csn.json
+datasphere.json
+default-env.json
+
+# added by cds
+.cdsrc-private.json

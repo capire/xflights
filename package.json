@@ -2,8 +2,11 @@
   "name": "@capire/xflights",
   "version": "1.0.0",
   "description": "CAP sample for master data service",
-  "main": "./package.json",
+  "scripts": {
+    "datasphere": "cdsc toCsn ./index.cds -o . && node ./.plugins/datasphere/index.js"
+  },
   "dependencies": {
+    "@cap-js/hana": "^2.1.2",
     "@sap/cds": ">=9",
     "express": "^4"
   },
@@ -11,5 +14,12 @@
     "@cap-js/cds-test": "*",
     "@cap-js/sqlite": ">=2"
   },
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "cds": {
+    "[hybrid]": {
+      "requires": {
+        "db": "hana"
+      }
+    }
+  }
 }
