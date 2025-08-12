@@ -80,8 +80,10 @@ for (const name in model.definitions) {
 for (const name in model.definitions) {
   const def = model.definitions[name]
   if (def.kind !== 'entity') continue
+  // Data Sphere delta deployment doesn't guarantee that these annotation are computed correctly
   delete def['@cds.autoexpose']
   delete def['@cds.persistence.skip']
+
   def['@DataWarehouse.consumption.external'] = dataProductServices.some(s => name.startsWith(s))
   def['@ObjectModel.modelingPattern'] = { '#': 'DATA_STRUCTURE' }
   def['@ObjectModel.supportedCapabilities'] = [{ '#': 'DATA_STRUCTURE' }]
@@ -97,6 +99,6 @@ const dataSphereString = JSON.stringify(model, null, 2)
   .replace(/\.texts"/g, '_texts"')
 
 fs.writeFileSync(
-  path.resolve(path.dirname(require.resolve('../../csn.json')), 'datasphere.json'),
+  path.resolve(path.dirname(require.resolve('../../gen/index.json')), 'datasphere.json'),
   dataSphereString
 )

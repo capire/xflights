@@ -8,7 +8,7 @@ service sap.capire.flights.data {
     key flight.ID, flight.{*} excluding { ID },
     key date, // preserve the flight date as a key
     *, // include all other fields from my.Flights
-  } excluding { flight, date, free_seats };
+  } excluding { flight };
 
   // Serve Airlines, Airports, and Supplements data as is
   entity Airlines as projection on my.Airlines;

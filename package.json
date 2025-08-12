@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "CAP sample for master data service",
   "scripts": {
-    "datasphere": "cdsc toCsn ./index.cds -o . && node ./.plugins/datasphere/index.js"
+    "datasphere": "cds compile ./index.cds -o ./gen && node ./.plugins/datasphere/index.js"
   },
   "dependencies": {
     "@cap-js/hana": "^2.1.2",
