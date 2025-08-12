@@ -1,7 +1,5 @@
 const model = require('../../csn.json')
 
-const textAspect = Symbol('text aspect')
-
 // Remove includes as Data Sphere doesn't support them
 for (const name in model.definitions) {
   const def = model.definitions[name]
