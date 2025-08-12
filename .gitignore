@@ -3,3 +3,6 @@
 _out
 gen
 node_modules
+
+# added by cds
+.cdsrc-private.json
