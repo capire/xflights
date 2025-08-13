@@ -3,7 +3,7 @@
 _out
 gen
 node_modules
-default-env.json
+.env
 
 # added by cds
 .cdsrc-private.json
