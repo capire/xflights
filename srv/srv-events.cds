@@ -12,10 +12,10 @@ aspect FlightKeys {
 extend service FlightsService {
 
   // inbound events
-  event BookingCancelled : BookingCreated {}
   event BookingCreated : FlightKeys {
     seats : array of Integer;
   }
+  event BookingCancelled : BookingCreated {}
 
   // outbound events
   event Flights.Updated : FlightKeys {
