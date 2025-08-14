@@ -20,15 +20,36 @@
         },
         "airline": {
           "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airlines"
+          "target": "sap.capire.flights.data.Airlines",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
         },
         "origin": {
           "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airports"
+          "target": "sap.capire.flights.data.Airports",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
         },
         "destination": {
           "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airports"
+          "target": "sap.capire.flights.data.Airports",
+          "keys": [
+            {
+              "ref": [
+                "ID"
+              ]
+            }
+          ]
         },
         "departure": {
           "type": "cds.Time"
@@ -55,7 +76,14 @@
           "@title": "{i18n>Currency}",
           "@description": "{i18n>CurrencyCode.Description}",
           "type": "Currency",
-          "target": "sap.capire.flights.data.Currencies"
+          "target": "sap.capire.flights.data.Currencies",
+          "keys": [
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
         },
         "maximum_seats": {
           "type": "cds.Integer"
@@ -69,7 +97,7 @@
         }
       },
       "@cds.external": 2,
-      "@cds.persistence.skip": true
+      "@cds.persistence.exists": true
     },
     "sap.capire.flights.data.Airlines": {
       "kind": "entity",
@@ -89,16 +117,22 @@
           "@title": "{i18n>Currency}",
           "@description": "{i18n>CurrencyCode.Description}",
           "type": "Currency",
-          "target": "sap.capire.flights.data.Currencies"
+          "target": "sap.capire.flights.data.Currencies",
+          "keys": [
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
         }
       },
       "@cds.external": 2,
-      "@cds.persistence.skip": true
+      "@cds.persistence.exists": true
     },
     "sap.capire.flights.data.Currencies": {
       "kind": "entity",
       "@readonly": true,
-      "@cds.persistence.skip": "if-unused",
       "elements": {
         "name": {
           "@title": "{i18n>Name}",
@@ -129,7 +163,8 @@
           "type": "cds.Int16"
         }
       },
-      "@cds.external": 2
+      "@cds.external": 2,
+      "@cds.persistence.exists": true
     },
     "sap.capire.flights.data.Airports": {
       "kind": "entity",
@@ -149,16 +184,22 @@
           "@title": "{i18n>Country}",
           "@description": "{i18n>CountryCode.Description}",
           "type": "Country",
-          "target": "sap.capire.flights.data.Countries"
+          "target": "sap.capire.flights.data.Countries",
+          "keys": [
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
         }
       },
       "@cds.external": 2,
-      "@cds.persistence.skip": true
+      "@cds.persistence.exists": true
     },
     "sap.capire.flights.data.Countries": {
       "kind": "entity",
       "@readonly": true,
-      "@cds.persistence.skip": "if-unused",
       "elements": {
         "name": {
           "@title": "{i18n>Name}",
@@ -180,7 +221,8 @@
           "length": 3
         }
       },
-      "@cds.external": 2
+      "@cds.external": 2,
+      "@cds.persistence.exists": true
     },
     "sap.capire.flights.Price": {
       "kind": "type",
@@ -198,7 +240,14 @@
         },
         "type": {
           "type": "cds.Association",
-          "target": "sap.capire.flights.data.SupplementTypes"
+          "target": "sap.capire.flights.data.SupplementTypes",
+          "keys": [
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
         },
         "descr": {
           "type": "cds.String",
@@ -213,15 +262,21 @@
           "@title": "{i18n>Currency}",
           "@description": "{i18n>CurrencyCode.Description}",
           "type": "Currency",
-          "target": "sap.capire.flights.data.Currencies"
+          "target": "sap.capire.flights.data.Currencies",
+          "keys": [
+            {
+              "ref": [
+                "code"
+              ]
+            }
+          ]
         }
       },
       "@cds.external": 2,
-      "@cds.persistence.skip": true
+      "@cds.persistence.exists": true
     },
     "sap.capire.flights.data.SupplementTypes": {
       "kind": "entity",
-      "@cds.persistence.skip": "if-unused",
       "elements": {
         "name": {
           "@title": "{i18n>Name}",
@@ -253,12 +308,12 @@
           }
         }
       },
-      "@cds.external": 2
+      "@cds.external": 2,
+      "@cds.persistence.exists": true
     },
     "sap.capire.flights.data.Languages": {
       "kind": "entity",
       "@readonly": true,
-      "@cds.persistence.skip": "if-unused",
       "elements": {
         "name": {
           "@title": "{i18n>Name}",
@@ -280,7 +335,8 @@
           "length": 14
         }
       },
-      "@cds.external": 2
+      "@cds.external": 2,
+      "@cds.persistence.exists": true
     }
   },
   "meta": {
