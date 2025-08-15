@@ -1,6 +1,6 @@
 {
   "name": "@capire/xflights",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "description": "CAP sample for master data service",
   "dependencies": {
     "@cap-js/hana": "^2.1.2",
