@@ -14,12 +14,5 @@
     "@cap-js/cds-test": "*",
     "@cap-js/sqlite": ">=2"
   },
-  "license": "Apache-2.0",
-  "cds": {
-    "[hybrid]": {
-      "requires": {
-        "db": "hana"
-      }
-    }
-  }
+  "license": "Apache-2.0"
 }

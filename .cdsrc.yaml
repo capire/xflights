@@ -1,2 +1,6 @@
 server:
   port: 4005
+
+"[hybrid]": # not required anymore with upcoming release of @cap-js/hana
+  requires:
+    db: hana
