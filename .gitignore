@@ -3,6 +3,10 @@
 _out
 gen
 node_modules
+.env
 
 # added by cds
 .cdsrc-private.json
+
+# generated apis
+apis
