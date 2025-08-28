@@ -10,7 +10,7 @@ npm add @capire/xflights
 ```
 
 <details>
-<summary>    
+<summary>
 
   _Requires to login once to [GitHub Packages](https://docs.github.com/packages) like that: (&rarr; click to show)_
 
@@ -46,15 +46,6 @@ entity TravelBookings {
 }
 ```
 
-## Get Help
-
-- Visit the [*capire* docs](https://cap.cloud.sap) to learn about CAP.
-- Especially [*Getting Started in a Nutshell*](https://cap.cloud.sap/docs/get-started/in-a-nutshell).
-- Visit our [*SAP Community*](https://answers.sap.com/tags/9f13aee1-834c-4105-8e43-ee442775e5ce) to ask questions.
-
-## Get Support
-
-In case you have a question, find a bug, or otherwise need support, please use our [community](https://answers.sap.com/tags/9f13aee1-834c-4105-8e43-ee442775e5ce). See the documentation at [https://cap.cloud.sap](https://cap.cloud.sap) for more details about CAP.
 
 ## License
 
