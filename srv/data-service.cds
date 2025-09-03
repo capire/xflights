@@ -20,4 +20,15 @@ service sap.capire.flights.data {
   @readonly entity Countries as projection on sap.common.Countries;
   @readonly entity Languages as projection on sap.common.Languages;
 
+  // inbound and outbound events
+  aspect FlightKeys {
+    flightNumber : Flights:ID;
+    flightDate : Flights:date;
+  }
+  @outbound event Flights.Updated : FlightKeys {
+    occupied_seats : Integer;
+    free_seats : Integer;
+  }
+  @inbound event BookingCreated : FlightKeys { seats : array of Integer; }
+  @inbound event BookingCancelled : FlightKeys { seats : array of Integer; }
 }
