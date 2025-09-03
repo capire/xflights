@@ -1,4 +1,4 @@
-using { sap.capire.flights.data.Flights } from './data-products';
+using { sap.capire.flights.data.Flights } from './data-service';
 
 // REVISIT: workaround for compiler limitation
 extend Flights with columns {
