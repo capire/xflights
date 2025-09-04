@@ -26,7 +26,7 @@ npm add @capire/xflights
   ```
 
   As password you're using a Personal Access Token (classic) with `read:packages` scope.
-  Read more about it in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)
+  Read more about it in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
 
 </details>
 
