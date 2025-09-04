@@ -40,13 +40,6 @@ using { sap.capire.flights.data.Flights } from '@capire/xflights';
 // mashup with your own entities ...
 ```
 
-## Using Github Packages
-
-You can also use this package from the GitHub Package Registry. To do this, you need to authenticate with GitHub Packages and then install the package using npm:
-
-```sh
-npm install @capire/xflights --registry=https://npm.pkg.github.com
-```
 
 ## License
 
