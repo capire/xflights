@@ -32,7 +32,6 @@ entity Flights {
   currency       : Currency;
   maximum_seats  : Integer;
   occupied_seats : Integer; // partly transactional
-  free_seats     : Integer = maximum_seats - occupied_seats;
 };
 
 entity Supplements : cuid {
