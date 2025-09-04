@@ -1,9 +1,45 @@
 # @capire/xflights
 
-This is an application that manages master data like Airlines, Airports, and Flights.
-Client applications can consume this via the `@capire/xflights` package like so:
-
+This is a reuse package that manages master data like Airlines, Airports, and Flights.
 It is used in the [xtravels](https://github.com/capire/xtravels) application.
+
+## Reuse
+
+You can reuse this package by embedding it in your CAP app:
+
+```sh
+npm add @capire/xflights
+```
+
+<details>
+<summary>
+
+   _Using GitHub Packages..._
+
+</summary>
+
+  The samples are published to the [GitHub Packages](https://docs.github.com/packages) registry,
+  which requires you to npm login once like that:
+
+  ```sh
+  npm login --scope=@capire --registry=https://npm.pkg.github.com
+  ```
+
+  As password you're using a Personal Access Token (classic) with `read:packages` scope.
+  Read more about it in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages)
+
+</details>
+
+
+## Usage
+
+Then you can import and use the entities in your CDS models like this:
+
+```cds
+using { sap.capire.flights.data.Flights } from '@capire/xflights';
+// mashup with your own entities ...
+```
+Find examples for that in the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/master-data.cds).
 
 
 ## License
