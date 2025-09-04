@@ -1,0 +1,40 @@
+locale,name,descr,code
+de,Euro,European Euro,EUR
+de,US-Dollar,United States Dollar,USD
+de,Kanadischer Dollar,Kanadischer Dollar,CAD
+de,Australischer Dollar,Australischer Dollar,AUD
+de,Pfund,Britische Pfund,GBP
+de,Schekel,Israelische Schekel,ILS
+de,Rupie,Indische Rupie,INR
+de,RiYal,Riyal (Katar),QAR
+de,RiYal,Riyal (Saudi Arabien),SAR
+de,Yen,Japanische Yen,JPY
+de,Renminbi Yuan,Chinesische Renminbi Yuan,CNY
+de,Singapurischer Dollar,Singapurischer Dollar,SGD
+de,Rand,Südafrikanische Rand,ZAR
+fr,euro,de la Zone euro,EUR
+fr,dollar,dollar des États-Unis,USD
+fr,dollar canadien,dollar canadien,CAD
+fr,dollar australien,dollar australien,AUD
+fr,livre sterling,pound sterling,GBP
+fr,Shekel,shekel israelien,ILS
+fr,Roupie,Roupie,INR
+fr,Rial,Rial,QAR
+fr,Riyal,Riyal,SAR
+fr,Yen,Yen,JPY
+fr,yuan renminbi,yuan renminbi,CNY
+fr,Singapour Dollar,Singapour Dollar,SGD
+fr,Rand,Rand,ZAR
+en,euro,euro,EUR
+en,dollar,US dollar,USD
+en,canadien dollar,canadien dollar,CAD
+en,australien dollar,australien dollar,AUD
+en,pound sterling,pound sterling,GBP
+en,Shekel,shekel,ILS
+en,Rupie,indian rupie,INR
+en,Riyal,qatar riyal,QAR
+en,Riyal,saudi arabian Riyal,SAR
+en,Yen,japanese yen,JPY
+en,Yuan,chinese yuan,CNY
+en,Singapore dollar,Singapore dollar,SGD
+en,Rand,south african rand,ZAR

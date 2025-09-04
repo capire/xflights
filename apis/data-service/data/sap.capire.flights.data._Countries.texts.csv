@@ -1,0 +1,88 @@
+locale,name,descr,code
+de,Australien,Commonwealth Australien,AU
+de,Kanada,Canada,CA
+de,China,Volksrepublik China,CN
+de,Frankreich,Republik Frankreich,FR
+de,Deutschland,Bundesrepublik Deutschland,DE
+de,Indien,Republik Indien,IN
+de,Israel,Staat Israel,IL
+de,Myanmar,Republik der Union Myanmar,MM
+de,Vereinigtes Königreich,Vereinigtes Königreich Großbritannien und Nordirland,GB
+de,Vereinigte Staaten,Vereinigte Staaten von Amerika,US
+de,Europäische Union,Europäische Union,EU
+de,Italien,Italien,IT
+de,Singapur,Singapur,SG
+de,Österreich,Österreich,AT
+de,Schweden,Schweden,SE
+de,Schweiz,Schweiz,CH
+de,Russland,Russland,RU
+de,Japan,Japan,JP
+de,Südafrika,Südafrika,ZA
+de,Spanien,Spanien,ES
+de,Belgien,Belgien,BE
+de,Slowenien,Slowenien,SI
+de,Niederlande,Niederlande,NL
+de,Mexiko,Mexiko,MX
+de,Brasilien,Brasilien,BR
+de,Kuba,Kuba,CU
+de,Simbabwe,Simbabwe,ZW
+de,Malaysia,Malaysia,MY
+de,Thailand,Thailand,TH
+fr,Australie,Commonwealth d'Australie,AU
+fr,Canada,Canada,CA
+fr,Chine,République populaire de Chine (RPC),CN
+fr,France,République française,FR
+fr,Allemagne,République fédérale d'Allemagne,DE
+fr,Inde,République de l'Inde,IN
+fr,Israël,État d'Israël,IL
+fr,Birmanie,République de l'Union du Myanmar,MM
+fr,Royaume-Uni,Royaume-Uni et Irlande du Nord,GB
+fr,États-Unis,États-Unis d'Amérique (États-Unis),US
+fr,Union Européenne,Union Européenne,EU
+fr,Italie,Italie,IT
+fr,Singapour,Singapour,SG
+fr,Autriche,Autriche,AT
+fr,Suède,Suède,SE
+fr,Suisse,Suisse,CH
+fr,Russie,Russie,RU
+fr,Japon,Japon,JP
+fr,Afrique du Sud,Afrique du Sud,ZA
+fr,Espagne,Espagne,ES
+fr,Belgique,Belgique,BE
+fr,Slovénie,Slovénie,SI
+fr,Pays-Bas,Pays-Bas,NL
+fr,Mexique,Mexique,MX
+fr,Brésil,Brésil,BR
+fr,Cuba,Cuba,CU
+fr,Zimbabwe,Zimbabwe,ZW
+fr,Malaisie,Malaisie,MY
+fr,Thaïlande,Thaïlande,TH
+en,Australie,Commonwealth d'Australie,AU
+en,Canada,Canada,CA
+en,China,People's Republic of China (PRC),CN
+en,France,French Republic,FR
+en,Germany,Federal Republic of Germany,DE
+en,India,Republic of India,IN
+en,Israel,State of Israel,IL
+en,Myanmar,Republic of the Union of Myanmar,MM
+en,United Kingdom,United Kingdom of Great Britain and Northern Ireland,GB
+en,United States,United States of America (USA),US
+en,European Union,European Union,EU
+en,Italy,Italy,IT
+en,Singapore,Singapore,SG
+en,Austria,Austria,AT
+en,Sweden,Sweden,SE
+en,Switzerland,Switzerland,CH
+en,Russia,Russia,RU
+en,Japan,Japan,JP
+en,South Africa,South Africa,ZA
+en,Spain,Spain,ES
+en,Belgium,Belgium,BE
+en,Slovenia,Slovenia,SI
+en,Netherlands,Netherlands,NL
+en,Mexico,Mexico,MX
+en,Brazil,Brazil,BR
+en,Cuba,Cuba,CU
+en,Zimbabwe,Zimbabwe,ZW
+en,Malaysia,Malaysia,MY
+en,Thailand,Thailand,TH
