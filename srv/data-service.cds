@@ -50,6 +50,6 @@ extend service sap.capire.flights.data {
    * - associations should stay in models for non-exposed targets -> currently taken out by 4odata
    * - cds.api.ignore is currently only supported for elements -> the below don't have any effect
    */
-  @cds.autoexpose:false @cds.persistence.skip entity ![(ignore: Currencies)] as projection on sap.common.Currencies;
-  @cds.autoexpose:false @cds.persistence.skip entity ![(ignore: Countries)] as projection on sap.common.Countries;
+  @cds.autoexpose:false @cds.persistence.skip entity ![( ignore: Currencies )] as projection on sap.common.Currencies;
+  @cds.autoexpose:false @cds.persistence.skip entity ![( ignore: Countries )] as projection on sap.common.Countries;
 }
