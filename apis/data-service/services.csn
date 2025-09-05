@@ -3,10 +3,10 @@
     "sap.capire.flights.data": {
       "@source": "srv/data-service.cds",
       "kind": "service",
+      "@data.product": true,
       "@hcql": true,
       "@rest": true,
       "@odata": true,
-      "@data.product": true,
       "@cds.external": 2
     },
     "sap.capire.flights.data.Flights": {
@@ -76,7 +76,7 @@
           "@title": "{i18n>Currency}",
           "@description": "{i18n>CurrencyCode.Description}",
           "type": "Currency",
-          "target": "sap.capire.flights.data._Currencies",
+          "target": "sap.capire.flights.data.(ignore: Currencies)",
           "keys": [
             {
               "ref": [
@@ -115,7 +115,7 @@
           "@title": "{i18n>Currency}",
           "@description": "{i18n>CurrencyCode.Description}",
           "type": "Currency",
-          "target": "sap.capire.flights.data._Currencies",
+          "target": "sap.capire.flights.data.(ignore: Currencies)",
           "keys": [
             {
               "ref": [
@@ -126,10 +126,10 @@
         }
       }
     },
-    "sap.capire.flights.data._Currencies": {
+    "sap.capire.flights.data.(ignore: Currencies)": {
       "kind": "entity",
       "@cds.autoexpose": false,
-      "@cds.persistence.skip": "if-unused",
+      "@cds.persistence.skip": true,
       "@cds.odata.valuelist": true,
       "elements": {
         "name": {
@@ -180,7 +180,7 @@
           "@title": "{i18n>Country}",
           "@description": "{i18n>CountryCode.Description}",
           "type": "Country",
-          "target": "sap.capire.flights.data._Countries",
+          "target": "sap.capire.flights.data.(ignore: Countries)",
           "keys": [
             {
               "ref": [
@@ -191,10 +191,10 @@
         }
       }
     },
-    "sap.capire.flights.data._Countries": {
+    "sap.capire.flights.data.(ignore: Countries)": {
       "kind": "entity",
       "@cds.autoexpose": false,
-      "@cds.persistence.skip": "if-unused",
+      "@cds.persistence.skip": true,
       "@cds.odata.valuelist": true,
       "elements": {
         "name": {
@@ -256,7 +256,7 @@
           "@title": "{i18n>Currency}",
           "@description": "{i18n>CurrencyCode.Description}",
           "type": "Currency",
-          "target": "sap.capire.flights.data._Currencies",
+          "target": "sap.capire.flights.data.(ignore: Currencies)",
           "keys": [
             {
               "ref": [
@@ -309,21 +309,10 @@
       "kind": "aspect",
       "elements": {
         "flightNumber": {
-          "type": {
-            "ref": [
-              "sap.capire.flights.data.Flights",
-              "ID"
-            ]
-          },
-          "length": 11
+          "type": "cds.String"
         },
         "flightDate": {
-          "type": {
-            "ref": [
-              "sap.capire.flights.data.Flights",
-              "date"
-            ]
-          }
+          "type": "cds.Date"
         }
       }
     },
@@ -332,21 +321,10 @@
       "@outbound": true,
       "elements": {
         "flightNumber": {
-          "type": {
-            "ref": [
-              "sap.capire.flights.data.Flights",
-              "ID"
-            ]
-          },
-          "length": 11
+          "type": "cds.String"
         },
         "flightDate": {
-          "type": {
-            "ref": [
-              "sap.capire.flights.data.Flights",
-              "date"
-            ]
-          }
+          "type": "cds.Date"
         },
         "occupied_seats": {
           "type": "cds.Integer"
@@ -361,21 +339,10 @@
       "@inbound": true,
       "elements": {
         "flightNumber": {
-          "type": {
-            "ref": [
-              "sap.capire.flights.data.Flights",
-              "ID"
-            ]
-          },
-          "length": 11
+          "type": "cds.String"
         },
         "flightDate": {
-          "type": {
-            "ref": [
-              "sap.capire.flights.data.Flights",
-              "date"
-            ]
-          }
+          "type": "cds.Date"
         },
         "seats": {
           "items": {
@@ -389,21 +356,10 @@
       "@inbound": true,
       "elements": {
         "flightNumber": {
-          "type": {
-            "ref": [
-              "sap.capire.flights.data.Flights",
-              "ID"
-            ]
-          },
-          "length": 11
+          "type": "cds.String"
         },
         "flightDate": {
-          "type": {
-            "ref": [
-              "sap.capire.flights.data.Flights",
-              "date"
-            ]
-          }
+          "type": "cds.Date"
         },
         "seats": {
           "items": {

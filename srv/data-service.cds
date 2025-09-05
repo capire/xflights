@@ -1,7 +1,9 @@
 using { sap, sap.capire.flights as my } from '../db/schema';
 
-@hcql @rest @odata @data.product
-service sap.capire.flights.data {
+/**
+ * Service for data integration
+ */
+@data.product service sap.capire.flights.data {
 
   // Serve Flights data with inlined connection details
   @readonly entity Flights as projection on my.Flights {
@@ -15,11 +17,16 @@ service sap.capire.flights.data {
   @readonly entity Airlines as projection on my.Airlines;
   @readonly entity Airports as projection on my.Airports;
   @readonly entity Supplements as projection on my.Supplements;
+}
+
+
+// Additionally serve via @hcql, @rest, and @odata, and add events
+@hcql @rest @odata extend service sap.capire.flights.data {
 
   // inbound and outbound events
   aspect FlightKeys {
-    flightNumber : Flights:ID;
-    flightDate : Flights:date;
+    flightNumber : String;
+    flightDate : Date;
   }
   @outbound event Flights.Updated : FlightKeys {
     occupied_seats : Integer;
@@ -28,7 +35,21 @@ service sap.capire.flights.data {
   @inbound event BookingCreated : FlightKeys { seats : array of Integer; }
   @inbound event BookingCancelled : FlightKeys { seats : array of Integer; }
 
-  // workaround to avoid conflicts with compiler's autoexpose behavior
-  @cds.autoexpose:false entity _Currencies as projection on sap.common.Currencies;
-  @cds.autoexpose:false entity _Countries as projection on sap.common.Countries;
+}
+
+
+
+// ----------------------------------------------------------------------------------------------------
+// Workarounds for @cds.autoexpose ...
+//
+extend service sap.capire.flights.data {
+  /**
+   * REVISIT: workaround to avoid conflicts due to cds.autoexpose behavior:
+   * - cds.autoexpose is primarily for UI/Fiori backend services, but currently applied to all
+   * - cds.autoexpose should be supported on individual assocs, not only targets
+   * - associations should stay in models for non-exposed targets -> currently taken out by 4odata
+   * - cds.api.ignore is currently only supported for elements -> the below don't have any effect
+   */
+  @cds.autoexpose:false @cds.persistence.skip entity ![(ignore: Currencies)] as projection on sap.common.Currencies;
+  @cds.autoexpose:false @cds.persistence.skip entity ![(ignore: Countries)] as projection on sap.common.Countries;
 }
