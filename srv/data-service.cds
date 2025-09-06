@@ -39,17 +39,16 @@ using { sap, sap.capire.flights as my } from '../db/schema';
 
 
 
-// ----------------------------------------------------------------------------------------------------
-// Workarounds for @cds.autoexpose ...
+//////////////////////////////////////////////////////////////////////////////////////////////////
 //
-extend service sap.capire.flights.data {
-  /**
-   * REVISIT: workaround to avoid conflicts due to cds.autoexpose behavior:
-   * - cds.autoexpose is primarily for UI/Fiori backend services, but currently applied to all
-   * - cds.autoexpose should be supported on individual assocs, not only targets
-   * - associations should stay in models for non-exposed targets -> currently taken out by 4odata
-   * - cds.api.ignore is currently only supported for elements -> the below don't have any effect
-   */
-  @cds.autoexpose:false @cds.persistence.skip entity ![(ignore: Currencies)] as projection on sap.common.Currencies;
-  @cds.autoexpose:false @cds.persistence.skip entity ![(ignore: Countries)] as projection on sap.common.Countries;
-}
+//  Workarounds for @cds.autoexpose kicking in too eagerly ...
+//
+//  - cds.autoexpose should only apply to UI/Fiori backend services, not API services
+//  - cds.autoexpose should be supported on individual assocs, not only targets
+//  - associations should stay in models for non-exposed targets -> currently taken out by 4odata
+//
+    annotate sap.common.Currencies with @cds.autoexpose:false;
+    annotate sap.common.Countries with @cds.autoexpose:false;
+    annotate sap.common.Languages with @cds.autoexpose:false;
+//
+//////////////////////////////////////////////////////////////////////////////////////////////////

@@ -20,36 +20,15 @@
         },
         "airline": {
           "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airlines",
-          "keys": [
-            {
-              "ref": [
-                "ID"
-              ]
-            }
-          ]
+          "target": "sap.capire.flights.data.Airlines"
         },
         "origin": {
           "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airports",
-          "keys": [
-            {
-              "ref": [
-                "ID"
-              ]
-            }
-          ]
+          "target": "sap.capire.flights.data.Airports"
         },
         "destination": {
           "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airports",
-          "keys": [
-            {
-              "ref": [
-                "ID"
-              ]
-            }
-          ]
+          "target": "sap.capire.flights.data.Airports"
         },
         "departure": {
           "type": "cds.Time"
@@ -76,14 +55,7 @@
           "@title": "{i18n>Currency}",
           "@description": "{i18n>CurrencyCode.Description}",
           "type": "Currency",
-          "target": "sap.capire.flights.data.(ignore: Currencies)",
-          "keys": [
-            {
-              "ref": [
-                "code"
-              ]
-            }
-          ]
+          "target": "sap.common.Currencies"
         },
         "maximum_seats": {
           "type": "cds.Integer"
@@ -115,50 +87,7 @@
           "@title": "{i18n>Currency}",
           "@description": "{i18n>CurrencyCode.Description}",
           "type": "Currency",
-          "target": "sap.capire.flights.data.(ignore: Currencies)",
-          "keys": [
-            {
-              "ref": [
-                "code"
-              ]
-            }
-          ]
-        }
-      }
-    },
-    "sap.capire.flights.data.(ignore: Currencies)": {
-      "kind": "entity",
-      "@cds.autoexpose": false,
-      "@cds.persistence.skip": true,
-      "@cds.odata.valuelist": true,
-      "elements": {
-        "name": {
-          "@title": "{i18n>Name}",
-          "type": "cds.String",
-          "length": 255
-        },
-        "descr": {
-          "@title": "{i18n>Description}",
-          "type": "cds.String",
-          "length": 1000
-        },
-        "code": {
-          "@title": "{i18n>CurrencyCode}",
-          "@Common.Text": {
-            "=": "name"
-          },
-          "key": true,
-          "type": "cds.String",
-          "length": 3
-        },
-        "symbol": {
-          "@title": "{i18n>CurrencySymbol}",
-          "type": "cds.String",
-          "length": 5
-        },
-        "minorUnit": {
-          "@title": "{i18n>CurrencyMinorUnit}",
-          "type": "cds.Int16"
+          "target": "sap.common.Currencies"
         }
       }
     },
@@ -180,41 +109,7 @@
           "@title": "{i18n>Country}",
           "@description": "{i18n>CountryCode.Description}",
           "type": "Country",
-          "target": "sap.capire.flights.data.(ignore: Countries)",
-          "keys": [
-            {
-              "ref": [
-                "code"
-              ]
-            }
-          ]
-        }
-      }
-    },
-    "sap.capire.flights.data.(ignore: Countries)": {
-      "kind": "entity",
-      "@cds.autoexpose": false,
-      "@cds.persistence.skip": true,
-      "@cds.odata.valuelist": true,
-      "elements": {
-        "name": {
-          "@title": "{i18n>Name}",
-          "type": "cds.String",
-          "length": 255
-        },
-        "descr": {
-          "@title": "{i18n>Description}",
-          "type": "cds.String",
-          "length": 1000
-        },
-        "code": {
-          "@title": "{i18n>CountryCode}",
-          "@Common.Text": {
-            "=": "name"
-          },
-          "key": true,
-          "type": "cds.String",
-          "length": 3
+          "target": "sap.common.Countries"
         }
       }
     },
@@ -234,14 +129,7 @@
         },
         "type": {
           "type": "cds.Association",
-          "target": "sap.capire.flights.data.SupplementTypes",
-          "keys": [
-            {
-              "ref": [
-                "code"
-              ]
-            }
-          ]
+          "target": "sap.capire.flights.data.SupplementTypes"
         },
         "descr": {
           "type": "cds.String",
@@ -256,14 +144,7 @@
           "@title": "{i18n>Currency}",
           "@description": "{i18n>CurrencyCode.Description}",
           "type": "Currency",
-          "target": "sap.capire.flights.data.(ignore: Currencies)",
-          "keys": [
-            {
-              "ref": [
-                "code"
-              ]
-            }
-          ]
+          "target": "sap.common.Currencies"
         }
       }
     },
