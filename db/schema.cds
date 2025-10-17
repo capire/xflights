@@ -1,4 +1,4 @@
-using { Currency, Country, cuid, sap.common.CodeList } from '@sap/cds/common';
+using { Currency, Country, cuid, sap.common.CodeList } from '@capire/common';
 
 namespace sap.capire.flights;
 
