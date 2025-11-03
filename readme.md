@@ -32,19 +32,21 @@ Find the respective service definitions in:
 - [_srv/data-service.cds_](./srv/data-service.cds)
 
 
-> [!tip] <details> <summary>Using Denormalized Views</summary>
-> 
-> The latter exposes a denormalized view of Flights data, in essence declared like that: 
-> 
+> [!tip] 
+>
+> <details> <summary>Using Denormalized Views</summary>
+>
+> The latter exposes a denormalized view of `Flights` data, in essence declared like that: 
+>
 > ```cds
 > entity Flights as projection on my.Flights { 
->   *,          // exposing all own elements, plus ...
->   flight.*,  // flattened flight connection elements
+>   *,          // exposing all own elements, plus...
+>   flight.*,  // flattened elements from flight connections
 > }
 > ```
-> 
+>
 > So the consumer doesn't need to care about normalized flight connections but just consume a conceptual model that is easier to work with, and looks like that:
-> 
+>
 > ![](_docs/data-service.drawio.svg)
 >
 > </details>
