@@ -59,11 +59,13 @@ The data API is published as a pre-built client package using `cds export`:
 cds export srv/data-service.cds
 ```
 
-This creates a separate CAP package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the service interface, accompanied by a package.json, test data and i18n bundles, which allows it to be used in consuming apps in a plug-and-play fashion. 
+This creates a separate CAP package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the service interface, accompanied by automatically derived test data and i18n bundles, which allows it to be used in consuming apps in a plug-and-play fashion. 
+
+Initially, it also adds a `package.json` with this content:
 
 ```json [package.json]
 {
-  "name": "@capire/xflights-data",
+  "name": "@capire/xflights-data-service",
   "version": "0.1.6",
   "cds": {
     "requires": {
@@ -73,7 +75,16 @@ This creates a separate CAP package within subfolder [_apis/data-service_](./api
 }
 ```
 
-Share this package with consuming applications using standard ways, like `npm publish`:
+We can modify that as appropriate, and did so by changing the package name to `@capire/xflights-data`:
+
+```diff
+-   "name": "@capire/xflights-data-service",
++   "name": "@capire/xflights-data",
+```
+
+
+
+We can finally share this package with consuming applications using standard ways, like `npm publish`:
 
 ```sh
 cd apis/data-service
