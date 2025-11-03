@@ -1,25 +1,88 @@
 # @capire/xflights
 
-This is a reuse package that manages master data like Airlines, Airports, and Flights.
-It is used in the [xtravels](https://github.com/capire/xtravels) application.
+This is a reuse package to manage and serve master data like _Airlines_, _Airports_, and _Flights_.
+It publishes a [pre-built client package](#published-apis), that is used in the [xtravels](https://github.com/capire/xtravels) application.
 
-## Reuse
+## Domain Model
 
-You can reuse this package by embedding it in your CAP app:
+The domain model is defined in [_db/schema.cds_](./db/schema.cds):
+
+![](_docs/domain-model.drawio.svg)
+
+
+## Service Interfaces
+
+Two service interfaces are provided: One to _maintain_ the master data from UIs or remote systems, and one to _consume_ it from remote applications, as shown below:
+
+![](_docs/services.drawio.svg)
+
+Find the respective service definitions in:
+- [_srv/admin-service.cds_](./srv/admin-service.cds)
+- [_srv/data-service.cds_](./srv/data-service.cds)
+
+
+> [!tip] <details> <summary>Using Denormalized Views</summary>
+> 
+> The latter exposes a denormalized view of Flights data, in essence declared like that: 
+> 
+> ```cds
+> entity Flights as projection on my.Flights { 
+>   *,          // exposing all own elements, plus ...
+>   flight.*,  // flattened flight connection elements
+> }
+> ```
+> 
+> So the consumer doesn't need to care about normalized flight connections but just consume a conceptual model that is easier to work with, and looks like that:
+> 
+> ![](_docs/data-service.drawio.svg)
+>
+> </details>
+
+## Published APIs
+
+The data API is published as a pre-built client package using `cds export`:
 
 ```sh
-npm add @capire/xflights
+cds export srv/data-service.cds
 ```
 
-<details>
-<summary>
+This creates a separate CAP package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the service interface, accompanied by a package.json, test data and i18n bundles. Share this package with consuming applications using standard ways, like `npm publish`.
 
-   _Using GitHub Packages..._
 
-</summary>
+## Service Integration
 
-  The samples are published to the [GitHub Packages](https://docs.github.com/packages) registry,
-  which requires you to npm login once like that:
+Use the published package in your consuming application by installing it via npm:
+
+```sh
+npm add @capire/xflights-data
+```
+> _Using GitHub Packages &rarr; [see below](#using-github-packages)_
+
+
+Then, you can use the imported models as usual, and as if they were local in mashups with your own entities. Here's an example from the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/master-data.cds):
+
+```cds
+using { sap.capire.flights.data as external } from '@capire/xflights-data';
+
+// declare a consumption view to capture what we really need
+@federated entity Flights as projection on external.Flights {
+  *,
+  airline.icon     as icon,
+  airline.name     as airline,
+  origin.name      as origin,
+  destination.name as destination,
+}
+```
+```cds
+entity Booking {
+  flight : Association to /* federated */ Flights;
+}
+```
+
+
+## Using GitHub Packages
+
+  Within the [_capire_](https://github.com/capire) org, we're publishing to the [GitHub Packages](https://docs.github.com/packages) registry, which requires you to npm login once like that:
 
   ```sh
   npm login --scope=@capire --registry=https://npm.pkg.github.com
@@ -27,20 +90,6 @@ npm add @capire/xflights
 
   As password you're using a Personal Access Token (classic) with `read:packages` scope.
   Read more about it in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
-
-</details>
-
-
-## Usage
-
-Then you can import and use the entities in your CDS models like this:
-
-```cds
-using { sap.capire.flights.data.Flights } from '@capire/xflights';
-// mashup with your own entities ...
-```
-Find examples for that in the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/master-data.cds).
-
 
 ## License
 
