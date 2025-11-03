@@ -8,8 +8,8 @@ It publishes a [pre-built client package](#published-apis), that is used in the 
 
 - [Domain Model](#domain-model)
 - [Service Interfaces](#service-interfaces)
-- [Published APIs](#published-apis)
-- [Service Integration](#service-integration)
+- [Client Packages](#client-packages)
+- [Consumption](#consumption)
 
 
 
@@ -40,8 +40,8 @@ Find the respective service definitions in:
 >
 > ```cds
 > entity Flights as projection on my.Flights { 
->   *,          // exposing all own elements, plus...
->   flight.*,  // flattened elements from flight connections
+>    *,          // exposing all own elements, plus...
+>    flight.*,  // flattened elements from flight connections
 > }
 > ```
 >
@@ -51,7 +51,9 @@ Find the respective service definitions in:
 >
 > </details>
 
-### Published APIs
+
+
+## Client Packages
 
 The data API is published as a pre-built client package using `cds export`:
 
@@ -84,6 +86,8 @@ We can modify that as appropriate, and did so by changing the package name to `@
 
 
 
+### Publish via `npm`
+
 We can finally share this package with consuming applications using standard ways, like `npm publish`:
 
 ```sh
@@ -93,6 +97,7 @@ npm publish
 
 
 > [!tip]
+>
 > <details> <summary>Using GitHub Packages</summary>
 >
 > Within the [_capire_](https://github.com/capire) org, we're publishing to [GitHub Packages](https://docs.github.com/packages), which requires you to npm login once like that:
@@ -106,35 +111,26 @@ npm publish
 
 
 
-## Service Integration
+## Consumption
 
-Use the published package in your consuming application by installing it via npm:
+Use the published client package in your consuming application by installing it via `npm`:
 
 ```sh
 npm add @capire/xflights-data
 ```
 
-
-
-Then, you can use the imported models as usual, and as if they were local in mashups with your own entities. Here's an example from the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/master-data.cds):
+With that, we can use the imported models as usual, and as if they were local in mashups with our own entities like so:
 
 ```cds
-using { sap.capire.flights.data as external } from '@capire/xflights-data';
+using { sap.capire.flights.data as imported } from '@capire/xflights-data';
+entity TravelBookings { //...
+  flight : Association to imported.Flights;
+}
+```
 
-// declare a consumption view to capture what we really need
-@federated entity Flights as projection on external.Flights {
-  *,
-  airline.icon     as icon,
-  airline.name     as airline,
-  origin.name      as origin,
-  destination.name as destination,
-}
-```
-```cds
-entity Booking {
-  flight : Association to /* federated */ Flights;
-}
-```
+Find a concrete and more comprehensive usage in the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/master-data.cds).
+
+
 
 ## License
 
