@@ -73,7 +73,7 @@ npm add @capire/xflights-data
 > [!tip]
 > <details> <summary>Using GitHub Packages</summary>
 >
-> Within the [_capire_](https://github.com/capire) org, we're publishing to the [GitHub Packages](https://docs.github.com/packages) registry, which requires you to npm login once like that:
+> Within the [_capire_](https://github.com/capire) org, we're publishing to [GitHub Packages](https://docs.github.com/packages), which requires you to npm login once like that:
 >
 >   ```sh
 >   npm login --scope=@capire --registry=https://npm.pkg.github.com
