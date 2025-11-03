@@ -69,7 +69,18 @@ Use the published package in your consuming application by installing it via npm
 ```sh
 npm add @capire/xflights-data
 ```
-> _Using GitHub Packages &rarr; [see below](#using-github-packages)_
+
+> [!tip]
+> <details> <summary>Using GitHub Packages</summary>
+>   Within the [_capire_](https://github.com/capire) org, we're publishing to the [GitHub Packages](https://docs.github.com/packages) registry, which requires you to npm login once like that:
+>
+>   ```sh
+>   npm login --scope=@capire --registry=https://npm.pkg.github.com
+>   ```
+>
+>   As password you're using a Personal Access Token (classic) with `read:packages` scope. Read more about that in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+> </details>
+
 
 
 Then, you can use the imported models as usual, and as if they were local in mashups with your own entities. Here's an example from the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/master-data.cds):
@@ -91,18 +102,6 @@ entity Booking {
   flight : Association to /* federated */ Flights;
 }
 ```
-
-
-## Using GitHub Packages
-
-  Within the [_capire_](https://github.com/capire) org, we're publishing to the [GitHub Packages](https://docs.github.com/packages) registry, which requires you to npm login once like that:
-
-  ```sh
-  npm login --scope=@capire --registry=https://npm.pkg.github.com
-  ```
-
-  As password you're using a Personal Access Token (classic) with `read:packages` scope.
-  Read more about it in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
 
 ## License
 
