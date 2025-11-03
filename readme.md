@@ -65,12 +65,12 @@ This creates a separate CAP reuse package within subfolder [_apis/data-service_]
 
 ![](_docs/client-packages.drawio.svg)
 
-Initially, it also adds a `package.json`, which we can modify that as appropriate, and did so by changing the package name to `@capire/xflights-data`:
+Initially, it also adds a `package.json`, which we can modify as appropriate, and did so by changing the package name to `@capire/xflights-data`:
 
 ```diff
 {
--   "name": "@capire/xflights-data-service",
-+   "name": "@capire/xflights-data",
+- "name": "@capire/xflights-data-service",
++ "name": "@capire/xflights-data",
   ...
 }
 ```
