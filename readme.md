@@ -61,27 +61,18 @@ The data API is published as a pre-built client package using `cds export`:
 cds export srv/data-service.cds
 ```
 
-This creates a separate CAP package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the service interface, accompanied by automatically derived test data and i18n bundles, which allows it to be used in consuming apps in a plug-and-play fashion. 
+This creates a separate CAP reuse package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the service interface, accompanied by automatically derived test data and i18n bundles, which allows it to be used from consuming apps in a plug-and-play fashion. 
 
-Initially, it also adds a `package.json` with this content:
+![](_docs/client-packages.drawio.svg)
 
-```json [package.json]
-{
-  "name": "@capire/xflights-data-service",
-  "version": "0.1.6",
-  "cds": {
-    "requires": {
-      "sap.capire.flights.data": true
-    }
-  }
-}
-```
-
-We can modify that as appropriate, and did so by changing the package name to `@capire/xflights-data`:
+Initially, it also adds a `package.json`, which we can modify that as appropriate, and did so by changing the package name to `@capire/xflights-data`:
 
 ```diff
+{
 -   "name": "@capire/xflights-data-service",
 +   "name": "@capire/xflights-data",
+  ...
+}
 ```
 
 
