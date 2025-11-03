@@ -1,7 +1,18 @@
 # @capire/xflights
 
+
 This is a reuse package to manage and serve master data like _Airlines_, _Airports_, and _Flights_.
 It publishes a [pre-built client package](#published-apis), that is used in the [xtravels](https://github.com/capire/xtravels) application.
+
+#### Table of Contents
+
+- [Domain Model](#domain-model)
+- [Service Interfaces](#service-interfaces)
+  - [Published APIs](#published-apis)
+- [Service Integration](#service-integration)
+
+
+
 
 ## Domain Model
 
@@ -38,7 +49,7 @@ Find the respective service definitions in:
 >
 > </details>
 
-## Published APIs
+### Published APIs
 
 The data API is published as a pre-built client package using `cds export`:
 
