@@ -61,6 +61,18 @@ cds export srv/data-service.cds
 
 This creates a separate CAP package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the service interface, accompanied by a package.json, test data and i18n bundles, which allows it to be used in consuming apps in a plug-and-play fashion. 
 
+```json [package.json]
+{
+  "name": "@capire/xflights-data",
+  "version": "0.1.6",
+  "cds": {
+    "requires": {
+      "sap.capire.flights.data": true
+    }
+  }
+}
+```
+
 Share this package with consuming applications using standard ways, like `npm publish`:
 
 ```sh
