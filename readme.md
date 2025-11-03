@@ -9,6 +9,7 @@ It publishes a [pre-built client package](#published-apis), that is used in the 
 - [Domain Model](#domain-model)
 - [Service Interfaces](#service-interfaces)
 - [Client Packages](#client-packages)
+- [Publishing](#publishing)
 - [Consumption](#consumption)
 
 
@@ -77,7 +78,7 @@ Initially, it also adds a `package.json`, which we can modify as appropriate, an
 
 
 
-### Publish via `npm`
+## Publishing
 
 We can finally share this package with consuming applications using standard ways, like `npm publish`:
 
