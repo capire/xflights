@@ -8,7 +8,7 @@ It publishes a [pre-built client package](#published-apis), that is used in the 
 
 - [Domain Model](#domain-model)
 - [Service Interfaces](#service-interfaces)
-  - [Published APIs](#published-apis)
+- [Published APIs](#published-apis)
 - [Service Integration](#service-integration)
 
 
@@ -59,7 +59,28 @@ The data API is published as a pre-built client package using `cds export`:
 cds export srv/data-service.cds
 ```
 
-This creates a separate CAP package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the service interface, accompanied by a package.json, test data and i18n bundles. Share this package with consuming applications using standard ways, like `npm publish`.
+This creates a separate CAP package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the service interface, accompanied by a package.json, test data and i18n bundles, which allows it to be used in consuming apps in a plug-and-play fashion. 
+
+Share this package with consuming applications using standard ways, like `npm publish`:
+
+```sh
+cd apis/data-service
+npm publish
+```
+
+
+> [!tip]
+> <details> <summary>Using GitHub Packages</summary>
+>
+> Within the [_capire_](https://github.com/capire) org, we're publishing to [GitHub Packages](https://docs.github.com/packages), which requires you to npm login once like that:
+>
+> ```sh
+> npm login --scope=@capire --registry=https://npm.pkg.github.com
+> ```
+>
+> As password you're using a Personal Access Token (classic) with `read:packages` scope. Read more about that in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+> </details>
+
 
 
 ## Service Integration
@@ -69,18 +90,6 @@ Use the published package in your consuming application by installing it via npm
 ```sh
 npm add @capire/xflights-data
 ```
-
-> [!tip]
-> <details> <summary>Using GitHub Packages</summary>
->
-> Within the [_capire_](https://github.com/capire) org, we're publishing to [GitHub Packages](https://docs.github.com/packages), which requires you to npm login once like that:
->
->   ```sh
->   npm login --scope=@capire --registry=https://npm.pkg.github.com
->   ```
->
->   As password you're using a Personal Access Token (classic) with `read:packages` scope. Read more about that in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
-> </details>
 
 
 
