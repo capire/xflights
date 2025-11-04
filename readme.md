@@ -1,52 +1,46 @@
 # @capire/xflights
 
-
 This is a reuse package to manage and serve master data like _Airlines_, _Airports_, and _Flights_.
-It publishes a [pre-built client package](#published-apis), that is used in the [xtravels](https://github.com/capire/xtravels) application.
+It publishes a [pre-built client package](#publishing-apis), that is used in the [xtravels](https://github.com/capire/xtravels) application.
 
-#### Table of Contents
+##### Table of Contents
 
 - [Domain Model](#domain-model)
 - [Service Interfaces](#service-interfaces)
-- [Client Packages](#client-packages)
-- [Publishing](#publishing)
-- [Consumption](#consumption)
+- [Exporting APIs](#exporting-apis)
+- [Publishing APIs](#publishing-apis)
+- [Consuming APIs](#consuming-apis)
 
 
 
 
 ## Domain Model
 
-The domain model is defined in [_db/schema.cds_](./db/schema.cds):
+The domain model is defined in [_db/schema.cds_](./db/schema.cds). It centers around normalized `FlightConnections`, which connect two `Airports` operated by an `Airline`, while entity `Flights` represents scheduled flights on specific dates with a specific aircraft and price.
 
 ![](_docs/domain-model.drawio.svg)
 
 
 ## Service Interfaces
 
-Two service interfaces are provided: One to _maintain_ the master data from UIs or remote systems, and one to _consume_ it from remote applications, as shown below:
+Two service interfaces are defined in [_srv/admin-service.cds_](./srv/admin-service.cds), and [_srv/data-service.cds_](./srv/data-service.cds), to serve different use cases: One to _maintain_ the master data from UIs or remote systems, and one to _consume_ it from remote applications, as shown below:
 
 ![](_docs/services.drawio.svg)
-
-Find the respective service definitions in:
-- [_srv/admin-service.cds_](./srv/admin-service.cds)
-- [_srv/data-service.cds_](./srv/data-service.cds)
 
 
 > [!tip] 
 >
-> <details> <summary>Using Denormalized Views</summary>
->
-> The latter exposes a denormalized view of `Flights` data, in essence declared like that: 
+> <details> <summary> Serving denormalized views </summary>
+>The data service exposes a denormalized view of `Flights` and associated `FlightConnections` data, essentially declared like that: 
 >
 > ```cds
-> entity Flights as projection on my.Flights { 
->    *,          // exposing all own elements, plus...
->    flight.*,  // flattened elements from flight connections
+>entity Flights as projection on my.Flights { 
+> *,          // all elements from Flights
+> flight.*,   // all elements from FlightConnections
 > }
 > ```
->
-> So the consumer doesn't need to care about normalized flight connections but just consume a conceptual model that is easier to work with, and looks like that:
+> 
+> With that consumers aren't bothered with normalized data but can just consume flat data, looking like that:
 >
 > ![](_docs/data-service.drawio.svg)
 >
@@ -54,19 +48,23 @@ Find the respective service definitions in:
 
 
 
-## Client Packages
+## Exporting APIs
 
-The data API is published as a pre-built client package using `cds export`:
+Given the respective service definition, we create a pre-built client package for the data API, which can be used from consuming apps in a plug-and-play fashion.
+
+![](_docs/client-packages.drawio.svg)
+
+We use `cds export` to create the API package:
 
 ```sh
 cds export srv/data-service.cds
 ```
 
-This creates a separate CAP reuse package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the service interface, accompanied by automatically derived test data and i18n bundles, which allows it to be used from consuming apps in a plug-and-play fashion. 
+This generates a separate CAP reuse package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the effective service API definitions, accompanied by automatically derived test data and i18n bundles. 
 
-![](_docs/client-packages.drawio.svg)
+![](_docs/data-service-api.drawio.svg)
 
-Initially, it also adds a `package.json`, which we can modify as appropriate, and did so by changing the package name to `@capire/xflights-data`:
+Initially, `cds export` also adds a `package.json`, which we can modify as appropriate, and did so by changing the package name to `@capire/xflights-data`:
 
 ```diff
 {
@@ -78,7 +76,7 @@ Initially, it also adds a `package.json`, which we can modify as appropriate, an
 
 
 
-## Publishing
+## Publishing APIs
 
 We can finally share this package with consuming applications using standard ways, like `npm publish`:
 
@@ -103,7 +101,7 @@ npm publish
 
 
 
-## Consumption
+## Consuming APIs
 
 Use the published client package in your consuming application by installing it via `npm`:
 
@@ -120,7 +118,7 @@ entity TravelBookings { //...
 }
 ```
 
-Find a concrete and more comprehensive usage in the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/master-data.cds).
+▷ Learn more about consuming APIs and CAP-level data integration in the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/master-data.cds).
 
 
 
