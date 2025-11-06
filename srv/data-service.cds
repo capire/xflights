@@ -20,8 +20,13 @@ using { sap, sap.capire.flights as my } from '../db/schema';
 }
 
 
-// Additionally serve via @hcql, @rest, and @odata, and add events
-@hcql @rest @odata extend service sap.capire.flights.data {
+// Alternative protocols to serve the data
+annotate sap.capire.flights.data 
+with @hcql @rest @odata;
+
+
+// Add custom events
+extend service sap.capire.flights.data {
 
   // inbound and outbound events
   aspect FlightKeys {
