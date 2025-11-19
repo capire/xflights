@@ -3,7 +3,11 @@
   "version": "0.1.7",
   "cds": {
     "requires": {
-      "sap.capire.flights.data": true
+      "sap.capire.flights.data": {
+        "federation": {
+          "default": "initial-load"
+        }
+      }
     }
   }
 }
