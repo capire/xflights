@@ -118,7 +118,7 @@ entity TravelBookings { //...
 }
 ```
 
-▷ Learn more about consuming APIs and CAP-level data integration in the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/master-data.cds).
+▷ Learn more about consuming APIs and CAP-level data integration in the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/xflights.cds).
 
 
 

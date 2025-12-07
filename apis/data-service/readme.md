@@ -39,7 +39,7 @@ Then you can import and use the entities in your CDS models like this:
 using { sap.capire.flights.data.Flights } from '@capire/xflights-data';
 // mashup with your own entities ...
 ```
-Find examples for that in the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/master-data.cds).
+Find examples for that in the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/xflights.cds).
 
 
 ## License
