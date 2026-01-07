@@ -5,8 +5,7 @@
   "dependencies": {
     "@capire/common": "*",
     "@cap-js/hana": "^2.1.2",
-    "@sap/cds": ">=9",
-    "express": "^4"
+    "@sap/cds": ">=9"
   },
   "devDependencies": {
     "@cap-js/cds-test": "*",
