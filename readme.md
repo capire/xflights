@@ -243,7 +243,7 @@ using from '@capire/xflights/srv/data-service';
 With that in place, change our API package dependency in the workspace root as follows:
 
 ```shell
-npm in ./xflights-api-shortcut
+npm add ./xflights-api-shortcut
 ```
 
 Check the effect of that → note how `@capire/xflights-data` dependencies now link to `./xflights-api-shortcut`:
