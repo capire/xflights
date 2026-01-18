@@ -215,6 +215,19 @@ And an `index.cds` file with that content:
 using from '@capire/xflights/srv/data-service';
 ```
 
+<details> <summary> Using the <code>cat > ... << EOF</code> technique... </summary>
+
+  You can create those two files as follows:
+  ```shell
+  cat > xflights-api-shortcut/package.json << EOF
+  ```
+  Copy and paste the JSON content above, then type: `EOF`, followed by ENTER.
+  Repeat the same for the `index.cds` file:
+  ```shell
+  cat > xflights-api-shortcut/index.cds << EOF
+  ```
+
+</details>
 With that in place, change our API package dependency in the workspace root as follows:
 
 ```shell
