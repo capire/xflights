@@ -217,7 +217,7 @@ using from '@capire/xflights/srv/data-service';
 
 <details> <summary> Using the <code>cat > ... << EOF</code> technique... </summary>
 
-  You can create those two files as follows:
+  You can also create those two files from the command line as follows:
   ```shell
   cat > xflights-api-shortcut/package.json << EOF
   ```
