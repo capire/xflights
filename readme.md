@@ -24,7 +24,10 @@ The domain model is defined in [_db/schema.cds_](./db/schema.cds). It centers ar
 
 ## Service Interfaces
 
-Two service interfaces are defined in [_srv/admin-service.cds_](./srv/admin-service.cds), and [_srv/data-service.cds_](./srv/data-service.cds), to serve different use cases: One to _maintain_ the master data from UIs or remote systems, and one to _consume_ it from remote applications, as shown below:
+Two service interfaces are defined in [_srv/admin-service.cds_](./srv/admin-service.cds), and [_srv/data-service.cds_](./srv/data-service.cds), to serve different use cases as shown below: 
+
+- an admin service to _maintain_ the master data from UIs or remote systems
+- a data service to _consume_ it from remote applications
 
 ![](_docs/services.drawio.svg)
 
@@ -32,12 +35,12 @@ Two service interfaces are defined in [_srv/admin-service.cds_](./srv/admin-serv
 > [!tip] 
 >
 > <details> <summary> Serving denormalized views </summary>
->The data service exposes a denormalized view of `Flights` and associated `FlightConnections` data, essentially declared like that: 
+> The data service exposes a denormalized view of `Flights` and associated `FlightConnections` data, essentially declared like that: 
 >
 > ```cds
->entity Flights as projection on my.Flights { 
-> *,          // all elements from Flights
-> flight.*,   // all elements from FlightConnections
+> entity Flights as projection on my.Flights { 
+>   *,          // all elements from Flights
+>   flight.*,   // all elements from FlightConnections
 > }
 > ```
 > 
@@ -55,7 +58,7 @@ Given the respective service definition, we create a pre-built client package fo
 
 ![](_docs/client-packages.drawio.svg)
 
-We use `cds export` to create the API package:
+We use `cds export` to create the API package, based on the Data Service definition:
 
 ```sh
 cds export srv/data-service.cds
@@ -97,7 +100,7 @@ npm publish
 > npm login --scope=@capire --registry=https://npm.pkg.github.com
 > ```
 >
-> As password you're using a Personal Access Token (classic) with `read:packages` scope. Read more about that in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+> As password you're using a Personal Access Token (classic) with `read:packages` scope (for retrieving and installing a package). Read more about that in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
 > </details>
 
 
@@ -129,7 +132,7 @@ Instead of exercising a workflow like that again and again:
 
 - ( *develop* → *export* → *publish* ) → *npmjs.com* → ( *update* → *consume* )
 
-... we can use *npm workspaces* technique to speed up things as follows:
+... we can use *npm workspaces* technique to work locally and speed up things as follows:
 
 ```shell 
 mkdir -p cap/works; cd cap/works
@@ -215,23 +218,32 @@ And an `index.cds` file with that content:
 using from '@capire/xflights/srv/data-service';
 ```
 
-<details> <summary> Using the <code>cat > ... << EOF</code> technique... </summary>
+<details> <summary> Using the shell's "here document" technique </summary>
 
   You can also create those two files from the command line as follows:
   ```shell
   cat > xflights-api-shortcut/package.json << EOF
+  {
+    "name": "@capire/xflights-data",
+    "dependencies": {
+      "@capire/xflights": "*"
+    }
+  }
+  EOF
   ```
-  Copy and paste the JSON content above, then type: `EOF`, followed by ENTER.
-  Repeat the same for the `index.cds` file:
+  
+  Take the same approach for the `index.cds` file:
   ```shell
   cat > xflights-api-shortcut/index.cds << EOF
+  using from '@capire/xflights/srv/data-service';
+  EOF
   ```
 
 </details>
 With that in place, change our API package dependency in the workspace root as follows:
 
 ```shell
-npm in ./xflights-api-shortcut
+npm add ./xflights-api-shortcut
 ```
 
 Check the effect of that → note how `@capire/xflights-data` dependencies now link to `./xflights-api-shortcut`:
@@ -282,4 +294,4 @@ Which means we've streamlined our workflows as follows:
 
 ## License
 
-Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+Copyright (c) 2026 SAP SE or an SAP affiliate company. All rights reserved. This file is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
