@@ -10,6 +10,7 @@ It publishes a [pre-built client package](#publishing-apis), that is used in the
 - [Exporting APIs](#exporting-apis)
 - [Publishing APIs](#publishing-apis)
 - [Consuming APIs](#consuming-apis)
+- [Using Workspaces](#using-workspaces)
 
 
 
@@ -119,6 +120,150 @@ entity TravelBookings { //...
 ```
 
 ▷ Learn more about consuming APIs and CAP-level data integration in the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/xflights.cds).
+
+
+
+## Using Workspaces
+
+Instead of exercising a workflow like that again and again:
+
+- ( *develop* → *export* → *publish* ) → *npmjs.com* → ( *update* → *consume* )
+
+... we can use *npm workspaces* technique to speed up things as follows:
+
+```shell 
+mkdir -p cap/works; cd cap/works
+git clone https://github.com/capire/xflights
+git clone https://github.com/capire/xtravels
+echo '{"workspaces":["xflights","xtravels"]}' > package.json
+```
+
+Add a link to the local `@capire/xflights-data` API package, enclosed with the cloned xflights sources:
+
+```shell
+npm add ./xflights/apis/data-service
+```
+
+Check the installation using `npm ls`, which would yield output as below, showing that `@capire/xtravel`'s dependency to `@capire/xflights-data` is nicely fulfilled by a local link to `./xflights/apis/data-service`:
+
+```shell
+npm ls @capire/xflights-data
+```
+
+```zsh
+works@ ~/cap/works
+├── @capire/xflights-data@0.1.11 -> ./xflights/apis/data-service
+└─┬ @capire/xtravels@1.0.0 -> ./xtravels
+  └── @capire/xflights-data@0.1.11 deduped -> ./xflights/apis/data-service
+```
+
+Start the xtravels application → and note the sources loaded from *./xflights/apis/data-service*, and the information further below about the `sap.capire.flights.data` service mocked automatically:
+
+```shell
+cds watch xtravels
+```
+
+```zsh
+[cds] - loaded model from 20 file(s):
+
+  xtravels/srv/travel-service.cds
+  xtravels/db/schema.cds
+  xtravels/db/xflights.cds
+  xflights/apis/data-service/index.cds
+  xflights/apis/data-service/services.csn
+  ...
+```
+
+```zsh
+[cds] - mocking sap.capire.flights.data {
+  at: [ '/odata/v4/data', '/rest/data', '/hcql/data' ],
+  decl: 'xflights/apis/data-service/services.csn:3',
+}
+```
+
+
+
+## Using Proxy Packages
+
+The usage of *npm workspaces* technique as described above streamlined our workflows as follows:
+
+- Before: ( *develop* → *export* → *publish* ) → *npmjs.com* → ( *update* → *consume* )
+- After: ( *develop* → *export* ) → ( *consume* )
+
+We can even more streamline that by eliminating the export step as follows...
+
+Create a new subfolder `xflights-api-shortcut`  in which we add two files as follows:
+
+```shell
+mkdir xflights-api-shortcut
+```
+
+Add a `package.json` file in there with that content:
+
+```json
+{
+  "name": "@capire/xflights-data",
+  "dependencies": {
+    "@capire/xflights": "*"
+  }
+}
+```
+
+And an `index.cds` file with that content:
+
+```cds
+using from '@capire/xflights/srv/data-service';
+```
+
+With that in place, change our API package dependency in the workspace root as follows:
+
+```shell
+npm in ./xflights-api-shortcut
+```
+
+Check the effect of that → note how `@capire/xflights-data` dependencies now link to `./xflights-api-shortcut`:
+
+```shell
+npm ls @capire/xflights-data
+```
+
+```zsh
+works@ ~/cap/works
+├── @capire/xflights-data@ -> ./xflights-api-shortcut
+└─┬ @capire/xtravels@1.0.0 -> ./xtravels
+  └── @capire/xflights-data@ deduped -> ./xflights-api-shortcut≤
+```
+
+Start the *xtravels* application → and note the sources loaded from *./xflights-api-shortcut*, and the information further below about the `sap.capire.flights.data` service mocked automatically:
+
+```shell
+cds watch xtravels
+```
+
+```zsh
+[cds] - loaded model from 20 file(s):
+
+  xtravels/srv/travel-service.cds
+  xtravels/db/schema.cds
+  xtravels/db/xflights.cds
+  xflights-api-shortcut/index.cds
+  xflights/srv/data-service.cds
+  xflights/db/schema.cds  
+  ...
+```
+
+```zsh
+[cds] - serving sap.capire.flights.data {
+  at: [ '/odata/v4/data', '/rest/data', '/hcql/data' ],
+  decl: 'xflights/apis/data-service/services.csn:3',
+}
+```
+
+Which means we've streamlined our workflows as follows:
+
+- Before: ( *change* → *export* → *publish* ) → *npmjs.com* → ( *update* → *consume* )
+- Step 1: ( *change* → *export* ) → ( *consume* )
+- Step 2: ( *change* ) → ( *consume* )
 
 
 
