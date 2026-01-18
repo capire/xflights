@@ -35,12 +35,12 @@ Two service interfaces are defined in [_srv/admin-service.cds_](./srv/admin-serv
 > [!tip] 
 >
 > <details> <summary> Serving denormalized views </summary>
->The data service exposes a denormalized view of `Flights` and associated `FlightConnections` data, essentially declared like that: 
+> The data service exposes a denormalized view of `Flights` and associated `FlightConnections` data, essentially declared like that: 
 >
 > ```cds
->entity Flights as projection on my.Flights { 
-> *,          // all elements from Flights
-> flight.*,   // all elements from FlightConnections
+> entity Flights as projection on my.Flights { 
+>   *,          // all elements from Flights
+>   flight.*,   // all elements from FlightConnections
 > }
 > ```
 > 
