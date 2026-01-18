@@ -247,7 +247,7 @@ works@ ~/cap/works
   └── @capire/xflights-data@ deduped -> ./xflights-api-shortcut≤
 ```
 
-Start the *xtravels* application → and note the sources loaded from *./xflights-api-shortcut*, and the information further below about the `sap.capire.flights.data` service mocked automatically:
+Start the *xtravels* application → and note the sources loaded from *./xflights-api-shortcut*, and the information further below about the `sap.capire.flights.data` service now being _served_, not _mocked_ anymore:
 
 ```shell
 cds watch xtravels
