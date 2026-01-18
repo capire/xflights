@@ -218,16 +218,25 @@ And an `index.cds` file with that content:
 using from '@capire/xflights/srv/data-service';
 ```
 
-<details> <summary> Using the <code>cat > ... << EOF</code> technique... </summary>
+<details> <summary> Using the shell's "here document" technique </summary>
 
   You can also create those two files from the command line as follows:
   ```shell
   cat > xflights-api-shortcut/package.json << EOF
+  {
+    "name": "@capire/xflights-data",
+    "dependencies": {
+      "@capire/xflights": "*"
+    }
+  }
+  EOF
   ```
-  Copy and paste the JSON content above, then type: `EOF`, followed by ENTER.
-  Repeat the same for the `index.cds` file:
+  
+  Take the same approach for the `index.cds` file:
   ```shell
   cat > xflights-api-shortcut/index.cds << EOF
+  using from '@capire/xflights/srv/data-service';
+  EOF
   ```
 
 </details>
