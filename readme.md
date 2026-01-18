@@ -100,7 +100,7 @@ npm publish
 > npm login --scope=@capire --registry=https://npm.pkg.github.com
 > ```
 >
-> As password you're using a Personal Access Token (classic) with `read:packages` scope. Read more about that in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
+> As password you're using a Personal Access Token (classic) with `read:packages` scope (for retrieving and installing a package). Read more about that in [Authenticating to GitHub Packages](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#authenticating-to-github-packages).
 > </details>
 
 
