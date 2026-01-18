@@ -132,7 +132,7 @@ Instead of exercising a workflow like that again and again:
 
 - ( *develop* → *export* → *publish* ) → *npmjs.com* → ( *update* → *consume* )
 
-... we can use *npm workspaces* technique to speed up things as follows:
+... we can use *npm workspaces* technique to work locally and speed up things as follows:
 
 ```shell 
 mkdir -p cap/works; cd cap/works
