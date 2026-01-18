@@ -3,12 +3,10 @@
   "version": "0.1.3",
   "description": "CAP sample for master data service",
   "dependencies": {
-    "@capire/common": "*",
     "@cap-js/hana": "^2.1.2",
     "@sap/cds": ">=9"
   },
   "devDependencies": {
-    "@cap-js/cds-test": "*",
     "@cap-js/sqlite": ">=2"
   },
   "license": "Apache-2.0"
