@@ -58,7 +58,7 @@ Given the respective service definition, we create a pre-built client package fo
 
 ![](_docs/client-packages.drawio.svg)
 
-We use `cds export` to create the API package:
+We use `cds export` to create the API package, based on the Data Service definition:
 
 ```sh
 cds export srv/data-service.cds
