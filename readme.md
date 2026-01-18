@@ -24,7 +24,10 @@ The domain model is defined in [_db/schema.cds_](./db/schema.cds). It centers ar
 
 ## Service Interfaces
 
-Two service interfaces are defined in [_srv/admin-service.cds_](./srv/admin-service.cds), and [_srv/data-service.cds_](./srv/data-service.cds), to serve different use cases: One to _maintain_ the master data from UIs or remote systems, and one to _consume_ it from remote applications, as shown below:
+Two service interfaces are defined in [_srv/admin-service.cds_](./srv/admin-service.cds), and [_srv/data-service.cds_](./srv/data-service.cds), to serve different use cases as shown below: 
+
+- an admin service to _maintain_ the master data from UIs or remote systems
+- a data service to _consume_ it from remote applications
 
 ![](_docs/services.drawio.svg)
 
