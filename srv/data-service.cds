@@ -1,7 +1,8 @@
 using { sap, sap.capire.flights as my } from '../db/schema';
 
 /**
- * Service for data integration
+ * Master data service providing flight-related data, e.g. Flights, Airlines,
+ * Airports, and Supplements (e.g. extra luggage, meals, etc.).
  */
 @data.product service sap.capire.flights.data {
 
