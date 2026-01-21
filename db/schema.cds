@@ -9,10 +9,11 @@ entity Flights {
   key flight     : Association to FlightConnections;
   key date       : Date;
   aircraft       : String;
-  price          : Price;
+  price          : Decimal(9,4);
   currency       : Currency;
   maximum_seats  : Integer;
   occupied_seats : Integer; // partly transactional
+  free_seats     : Integer = maximum_seats - occupied_seats; 
 }
 
 /**
@@ -43,7 +44,7 @@ entity Airports : cuid {
 entity Supplements : cuid {
   type     : Association to SupplementTypes;
   descr    : localized String(1111);
-  price    : Price;
+  price    : Decimal(9,4);
   currency : Currency;
 }
 
@@ -55,5 +56,3 @@ entity SupplementTypes : CodeList {
     Extra = 'EX';
   }
 }
-
-type Price : Decimal(9,4);

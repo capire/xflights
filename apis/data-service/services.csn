@@ -7,6 +7,7 @@
       "@hcql": true,
       "@rest": true,
       "@odata": true,
+      "@graphql": true,
       "@cds.external": 2
     },
     "sap.capire.flights.data.Flights": {
@@ -18,27 +19,6 @@
           "type": "cds.String",
           "length": 11
         },
-        "airline": {
-          "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airlines"
-        },
-        "origin": {
-          "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airports"
-        },
-        "destination": {
-          "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airports"
-        },
-        "departure": {
-          "type": "cds.Time"
-        },
-        "arrival": {
-          "type": "cds.Time"
-        },
-        "distance": {
-          "type": "cds.Integer"
-        },
         "date": {
           "key": true,
           "type": "cds.Date"
@@ -47,7 +27,7 @@
           "type": "cds.String"
         },
         "price": {
-          "type": "sap.capire.flights.Price",
+          "type": "cds.Decimal",
           "precision": 9,
           "scale": 4
         },
@@ -81,6 +61,27 @@
               }
             ]
           }
+        },
+        "airline": {
+          "type": "cds.Association",
+          "target": "sap.capire.flights.data.Airlines"
+        },
+        "origin": {
+          "type": "cds.Association",
+          "target": "sap.capire.flights.data.Airports"
+        },
+        "destination": {
+          "type": "cds.Association",
+          "target": "sap.capire.flights.data.Airports"
+        },
+        "departure": {
+          "type": "cds.Time"
+        },
+        "arrival": {
+          "type": "cds.Time"
+        },
+        "distance": {
+          "type": "cds.Integer"
         }
       }
     },
@@ -128,12 +129,6 @@
         }
       }
     },
-    "sap.capire.flights.Price": {
-      "kind": "type",
-      "type": "cds.Decimal",
-      "precision": 9,
-      "scale": 4
-    },
     "sap.capire.flights.data.Supplements": {
       "kind": "entity",
       "@readonly": true,
@@ -151,7 +146,7 @@
           "length": 1111
         },
         "price": {
-          "type": "sap.capire.flights.Price",
+          "type": "cds.Decimal",
           "precision": 9,
           "scale": 4
         },
@@ -200,73 +195,10 @@
           }
         }
       }
-    },
-    "sap.capire.flights.data.FlightKeys": {
-      "kind": "aspect",
-      "elements": {
-        "flightNumber": {
-          "type": "cds.String"
-        },
-        "flightDate": {
-          "type": "cds.Date"
-        }
-      }
-    },
-    "sap.capire.flights.data.Flights.Updated": {
-      "kind": "event",
-      "@outbound": true,
-      "elements": {
-        "flightNumber": {
-          "type": "cds.String"
-        },
-        "flightDate": {
-          "type": "cds.Date"
-        },
-        "occupied_seats": {
-          "type": "cds.Integer"
-        },
-        "free_seats": {
-          "type": "cds.Integer"
-        }
-      }
-    },
-    "sap.capire.flights.data.BookingCreated": {
-      "kind": "event",
-      "@inbound": true,
-      "elements": {
-        "flightNumber": {
-          "type": "cds.String"
-        },
-        "flightDate": {
-          "type": "cds.Date"
-        },
-        "seats": {
-          "items": {
-            "type": "cds.Integer"
-          }
-        }
-      }
-    },
-    "sap.capire.flights.data.BookingCancelled": {
-      "kind": "event",
-      "@inbound": true,
-      "elements": {
-        "flightNumber": {
-          "type": "cds.String"
-        },
-        "flightDate": {
-          "type": "cds.Date"
-        },
-        "seats": {
-          "items": {
-            "type": "cds.Integer"
-          }
-        }
-      }
     }
   },
   "meta": {
-    "creator": "CDS Compiler v6.5.2",
+    "creator": "CDS Compiler v6.6.0",
     "flavor": "inferred",
     "minified": true
   },

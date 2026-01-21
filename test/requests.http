@@ -24,7 +24,6 @@ Content-Type: application/json
   "currency_code": "USD",
   "date": "2024-06-06",
   "flight_ID": "TEST001",
-  "free_seats": 29,
   "maximum_seats": 475,
   "occupied_seats": 446,
   "price": "3781.0000"
