@@ -1,13 +1,4 @@
 {
   "name": "@capire/xflights-data",
-  "version": "0.1.12",
-  "cds": {
-    "requires": {
-      "sap.capire.flights.data": {
-        "federation": {
-          "default": "initial-load"
-        }
-      }
-    }
-  }
+  "version": "0.1.13"
 }

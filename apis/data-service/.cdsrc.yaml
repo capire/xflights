@@ -1,0 +1,3 @@
+cds:
+  requires:
+    sap.capire.flights.data: true
