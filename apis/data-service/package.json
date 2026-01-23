@@ -1,4 +1,9 @@
 {
   "name": "@capire/xflights-data",
-  "version": "0.1.13"
+  "version": "0.1.13",
+  "cds": {
+    "requires": {
+      "sap.capire.flights.data": true
+    }
+  }
 }
