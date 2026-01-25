@@ -33,12 +33,15 @@ entity Airlines : cuid {
   name     : String;
   icon     : String;
   currency : Currency;
+  flights  : Association to many FlightConnections on flights.airline = $self;
 }
 
 entity Airports : cuid {
   name    : String;
   city    : String;
   country : Country;
+  arrivals : Association to many FlightConnections on arrivals.destination = $self;
+  departures : Association to many FlightConnections on departures.origin = $self;
 }
 
 entity Supplements : cuid {

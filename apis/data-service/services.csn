@@ -19,6 +19,27 @@
           "type": "cds.String",
           "length": 11
         },
+        "airline": {
+          "type": "cds.Association",
+          "target": "sap.capire.flights.data.Airlines"
+        },
+        "origin": {
+          "type": "cds.Association",
+          "target": "sap.capire.flights.data.Airports"
+        },
+        "destination": {
+          "type": "cds.Association",
+          "target": "sap.capire.flights.data.Airports"
+        },
+        "departure": {
+          "type": "cds.Time"
+        },
+        "arrival": {
+          "type": "cds.Time"
+        },
+        "distance": {
+          "type": "cds.Integer"
+        },
         "date": {
           "key": true,
           "type": "cds.Date"
@@ -42,46 +63,6 @@
         },
         "occupied_seats": {
           "type": "cds.Integer"
-        },
-        "free_seats": {
-          "@Core.Computed": true,
-          "type": "cds.Integer",
-          "$calc": {
-            "xpr": [
-              {
-                "ref": [
-                  "maximum_seats"
-                ]
-              },
-              "-",
-              {
-                "ref": [
-                  "occupied_seats"
-                ]
-              }
-            ]
-          }
-        },
-        "airline": {
-          "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airlines"
-        },
-        "origin": {
-          "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airports"
-        },
-        "destination": {
-          "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airports"
-        },
-        "departure": {
-          "type": "cds.Time"
-        },
-        "arrival": {
-          "type": "cds.Time"
-        },
-        "distance": {
-          "type": "cds.Integer"
         }
       }
     },
@@ -104,6 +85,27 @@
           "@description": "{i18n>CurrencyCode.Description}",
           "type": "Currency",
           "target": "sap.common.Currencies"
+        },
+        "flights": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "sap.capire.flights.data.Flights",
+          "on": [
+            {
+              "ref": [
+                "flights",
+                "airline"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
         }
       }
     },
@@ -126,6 +128,48 @@
           "@description": "{i18n>CountryCode.Description}",
           "type": "Country",
           "target": "sap.common.Countries"
+        },
+        "arrivals": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "sap.capire.flights.data.Flights",
+          "on": [
+            {
+              "ref": [
+                "arrivals",
+                "destination"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
+        },
+        "departures": {
+          "type": "cds.Association",
+          "cardinality": {
+            "max": "*"
+          },
+          "target": "sap.capire.flights.data.Flights",
+          "on": [
+            {
+              "ref": [
+                "departures",
+                "origin"
+              ]
+            },
+            "=",
+            {
+              "ref": [
+                "$self"
+              ]
+            }
+          ]
         }
       }
     },
