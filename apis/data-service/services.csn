@@ -19,27 +19,6 @@
           "type": "cds.String",
           "length": 11
         },
-        "airline": {
-          "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airlines"
-        },
-        "origin": {
-          "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airports"
-        },
-        "destination": {
-          "type": "cds.Association",
-          "target": "sap.capire.flights.data.Airports"
-        },
-        "departure": {
-          "type": "cds.Time"
-        },
-        "arrival": {
-          "type": "cds.Time"
-        },
-        "distance": {
-          "type": "cds.Integer"
-        },
         "date": {
           "key": true,
           "type": "cds.Date"
@@ -62,6 +41,46 @@
           "type": "cds.Integer"
         },
         "occupied_seats": {
+          "type": "cds.Integer"
+        },
+        "free_seats": {
+          "@Core.Computed": true,
+          "type": "cds.Integer",
+          "$calc": {
+            "xpr": [
+              {
+                "ref": [
+                  "maximum_seats"
+                ]
+              },
+              "-",
+              {
+                "ref": [
+                  "occupied_seats"
+                ]
+              }
+            ]
+          }
+        },
+        "airline": {
+          "type": "cds.Association",
+          "target": "sap.capire.flights.data.Airlines"
+        },
+        "origin": {
+          "type": "cds.Association",
+          "target": "sap.capire.flights.data.Airports"
+        },
+        "destination": {
+          "type": "cds.Association",
+          "target": "sap.capire.flights.data.Airports"
+        },
+        "departure": {
+          "type": "cds.Time"
+        },
+        "arrival": {
+          "type": "cds.Time"
+        },
+        "distance": {
           "type": "cds.Integer"
         }
       }

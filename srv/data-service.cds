@@ -9,10 +9,9 @@ using sap.capire.flights as x from '../db/schema';
 service sap.capire.flights.data {
 
   // Serve Flights data via denormalized view with flattened FlightConnections
-  @readonly entity Flights as select from x.Flights left join x.FlightConnections as Flight on flight.ID = Flight.ID {
-    key Flight.ID, Flight.{*} excluding { ID },
-    key Flights.date, Flights.{*} excluding { flight, date, free_seats },
-  }
+  @readonly entity Flights as select from x.Flights left join x.FlightConnections on ID = flight.ID {
+    key ID, key date, *
+  } excluding { flight } // as flight details are flattened
 
   // Serve Airlines with redirected association to Flights view
   @readonly entity Airlines as projection on x.Airlines { *,
