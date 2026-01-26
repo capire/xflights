@@ -28,12 +28,12 @@ service sap.capire.flights.data {
   @readonly entity Supplements as projection on x.Supplements;
 
   // PARKED for later use ...
-  // Custom events to sync with consumers about flight seat availability
+  // // Custom events to sync with consumers about flight seat availability
   // @inbound  event Booking.Created : FlightKeys { seats : array of Integer; }
   // @inbound  event Booking.Deleted : FlightKeys { seats : array of Integer; }
   // @outbound event Flights.Updated : FlightKeys { free_seats : Integer; }
-  // Reuse type for referencing flights by compound key
-  // type FlightKeys : {
+  // // Reuse aspect for referencing flights by compound key
+  // aspect FlightKeys : {
   //   flightNumber : type of Flights:ID;
   //   flightDate   : type of Flights:date;
   // }
