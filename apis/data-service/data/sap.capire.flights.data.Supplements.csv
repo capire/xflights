@@ -1,50 +1,50 @@
-ID,type_code,descr,price,currency_code
-BV-0001,BV,Hot Chocolate,2.3,EUR
-BV-0002,BV,Alcohol free Champagne,7.5,EUR
-BV-0003,BV,Coke,3.5,EUR
-BV-0004,BV,Orange Lemonade,3.5,EUR
-BV-0005,BV,Apple Juice,3.5,EUR
-BV-0006,BV,Pear Juice,3.5,EUR
-BV-0007,BV,Mango Juice,3.5,EUR
-BV-0008,BV,Lemon Lemonade,3.5,EUR
-BV-0009,BV,Tomato Juice,4.5,EUR
-ML-0001,ML,Black Forest Cake,3,EUR
-ML-0002,ML,Chocolate Cake,2,EUR
-ML-0003,ML,Apple Pie,1.5,EUR
-ML-0004,ML,Pear Pie,1.5,EUR
-ML-0005,ML,Nice Salad,8,EUR
-ML-0006,ML,Paris Salad,9,EUR
-ML-0007,ML,Hamburg Salad with Eggs,12,EUR
-ML-0008,ML,Quail with French Salad and Black Forest Cake,25,EUR
-ML-0009,ML,Duck on Lettuce,13,EUR
-ML-0010,ML,Carpaccio,5,EUR
-ML-0011,ML,Seasonal Salad,7,EUR
-ML-0012,ML,Hamburg Salad with Fresh Shrimps,16,EUR
-ML-0013,ML,Quail,17,EUR
-ML-0014,ML,Wiener Schnitzel,14,EUR
-ML-0015,ML,Pork Schnitzel,13,EUR
-ML-0016,ML,Schnitzel with Pepper Sauce,14,EUR
-ML-0017,ML,Chicken and French Fries,11,EUR
-ML-0018,ML,Turkey Steak,12,EUR
-ML-0019,ML,Bavarian Duck,15,EUR
-ML-0020,ML,Knuckle of Pork,14,EUR
-ML-0021,ML,Fillet of Beef,22,EUR
-ML-0022,ML,Trout Au Bleu,21,EUR
-ML-0023,ML,Trout Meuniere,20,EUR
-ML-0024,ML,Monkfish,17,EUR
-ML-0025,ML,Sole,12,EUR
-ML-0026,ML,Mini Fried Sole,6,EUR
-ML-0027,ML,Salmon in a Bearnaise Sauce,14,EUR
-ML-0028,ML,Salmon Lasagne,15,EUR
-ML-0029,ML,Chocolate Ice Cream,3,EUR
-ML-0030,ML,Vanilla Ice Cream,2.5,EUR
-ML-0031,ML,Vanilla Ice Cream with Hot Cherries,4.5,EUR
-ML-0032,ML,Vanilla Ice Cream with Hot Raspberries,4.5,EUR
-ML-0033,ML,Apple Strudel,4,EUR
-ML-0034,ML,Raspberry Sorbet,4,EUR
-ML-0035,ML,Strawberry Sorbet,4,EUR
-ML-0036,ML,Lemon Sorbet,4,EUR
-LU-0001,LU,Extra baggage 5 kgs,40,EUR
-LU-0002,LU,Luggage transfer from airport to hotel,15,EUR
-LU-0003,LU,Luggage pickup from home and return,75,EUR
-LU-0004,LU,Bulky goods like sports equipment,80,EUR
+ID,modifiedAt,type_code,descr,price,currency_code
+BV-0001,2026-01-27T09:43:55.179Z,BV,Hot Chocolate,2.3,EUR
+BV-0002,2026-01-27T09:43:55.179Z,BV,Alcohol free Champagne,7.5,EUR
+BV-0003,2026-01-27T09:43:55.179Z,BV,Coke,3.5,EUR
+BV-0004,2026-01-27T09:43:55.179Z,BV,Orange Lemonade,3.5,EUR
+BV-0005,2026-01-27T09:43:55.179Z,BV,Apple Juice,3.5,EUR
+BV-0006,2026-01-27T09:43:55.179Z,BV,Pear Juice,3.5,EUR
+BV-0007,2026-01-27T09:43:55.179Z,BV,Mango Juice,3.5,EUR
+BV-0008,2026-01-27T09:43:55.179Z,BV,Lemon Lemonade,3.5,EUR
+BV-0009,2026-01-27T09:43:55.179Z,BV,Tomato Juice,4.5,EUR
+ML-0001,2026-01-27T09:43:55.179Z,ML,Black Forest Cake,3,EUR
+ML-0002,2026-01-27T09:43:55.179Z,ML,Chocolate Cake,2,EUR
+ML-0003,2026-01-27T09:43:55.179Z,ML,Apple Pie,1.5,EUR
+ML-0004,2026-01-27T09:43:55.179Z,ML,Pear Pie,1.5,EUR
+ML-0005,2026-01-27T09:43:55.179Z,ML,Nice Salad,8,EUR
+ML-0006,2026-01-27T09:43:55.179Z,ML,Paris Salad,9,EUR
+ML-0007,2026-01-27T09:43:55.179Z,ML,Hamburg Salad with Eggs,12,EUR
+ML-0008,2026-01-27T09:43:55.179Z,ML,Quail with French Salad and Black Forest Cake,25,EUR
+ML-0009,2026-01-27T09:43:55.179Z,ML,Duck on Lettuce,13,EUR
+ML-0010,2026-01-27T09:43:55.179Z,ML,Carpaccio,5,EUR
+ML-0011,2026-01-27T09:43:55.179Z,ML,Seasonal Salad,7,EUR
+ML-0012,2026-01-27T09:43:55.179Z,ML,Hamburg Salad with Fresh Shrimps,16,EUR
+ML-0013,2026-01-27T09:43:55.179Z,ML,Quail,17,EUR
+ML-0014,2026-01-27T09:43:55.179Z,ML,Wiener Schnitzel,14,EUR
+ML-0015,2026-01-27T09:43:55.179Z,ML,Pork Schnitzel,13,EUR
+ML-0016,2026-01-27T09:43:55.179Z,ML,Schnitzel with Pepper Sauce,14,EUR
+ML-0017,2026-01-27T09:43:55.179Z,ML,Chicken and French Fries,11,EUR
+ML-0018,2026-01-27T09:43:55.179Z,ML,Turkey Steak,12,EUR
+ML-0019,2026-01-27T09:43:55.179Z,ML,Bavarian Duck,15,EUR
+ML-0020,2026-01-27T09:43:55.179Z,ML,Knuckle of Pork,14,EUR
+ML-0021,2026-01-27T09:43:55.179Z,ML,Fillet of Beef,22,EUR
+ML-0022,2026-01-27T09:43:55.179Z,ML,Trout Au Bleu,21,EUR
+ML-0023,2026-01-27T09:43:55.179Z,ML,Trout Meuniere,20,EUR
+ML-0024,2026-01-27T09:43:55.179Z,ML,Monkfish,17,EUR
+ML-0025,2026-01-27T09:43:55.179Z,ML,Sole,12,EUR
+ML-0026,2026-01-27T09:43:55.179Z,ML,Mini Fried Sole,6,EUR
+ML-0027,2026-01-27T09:43:55.179Z,ML,Salmon in a Bearnaise Sauce,14,EUR
+ML-0028,2026-01-27T09:43:55.179Z,ML,Salmon Lasagne,15,EUR
+ML-0029,2026-01-27T09:43:55.179Z,ML,Chocolate Ice Cream,3,EUR
+ML-0030,2026-01-27T09:43:55.179Z,ML,Vanilla Ice Cream,2.5,EUR
+ML-0031,2026-01-27T09:43:55.179Z,ML,Vanilla Ice Cream with Hot Cherries,4.5,EUR
+ML-0032,2026-01-27T09:43:55.179Z,ML,Vanilla Ice Cream with Hot Raspberries,4.5,EUR
+ML-0033,2026-01-27T09:43:55.179Z,ML,Apple Strudel,4,EUR
+ML-0034,2026-01-27T09:43:55.179Z,ML,Raspberry Sorbet,4,EUR
+ML-0035,2026-01-27T09:43:55.179Z,ML,Strawberry Sorbet,4,EUR
+ML-0036,2026-01-27T09:43:55.179Z,ML,Lemon Sorbet,4,EUR
+LU-0001,2026-01-27T09:43:55.179Z,LU,Extra baggage 5 kgs,40,EUR
+LU-0002,2026-01-27T09:43:55.179Z,LU,Luggage transfer from airport to hotel,15,EUR
+LU-0003,2026-01-27T09:43:55.179Z,LU,Luggage pickup from home and return,75,EUR
+LU-0004,2026-01-27T09:43:55.179Z,LU,Bulky goods like sports equipment,80,EUR

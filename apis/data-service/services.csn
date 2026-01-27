@@ -23,6 +23,11 @@
           "key": true,
           "type": "cds.Date"
         },
+        "modifiedAt": {
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
         "aircraft": {
           "type": "cds.String"
         },
@@ -93,6 +98,11 @@
           "key": true,
           "type": "cds.UUID"
         },
+        "modifiedAt": {
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
+        },
         "name": {
           "type": "cds.String"
         },
@@ -135,6 +145,11 @@
         "ID": {
           "key": true,
           "type": "cds.UUID"
+        },
+        "modifiedAt": {
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
         },
         "name": {
           "type": "cds.String"
@@ -199,6 +214,11 @@
         "ID": {
           "key": true,
           "type": "cds.UUID"
+        },
+        "modifiedAt": {
+          "@title": "{i18n>ChangedAt}",
+          "@readonly": true,
+          "type": "cds.Timestamp"
         },
         "type": {
           "type": "cds.Association",

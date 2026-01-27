@@ -1,11 +1,11 @@
-using { Currency, Country, cuid, sap.common.CodeList } from '@sap/cds/common';
+using { Currency, Country, cuid, managed, sap.common.CodeList } from '@sap/cds/common';
 
 namespace sap.capire.flights;
 
 /**
  * A scheduled flight on a specific date with a specific aircraft and price.
  */
-entity Flights {
+entity Flights : managed {
   key flight     : Association to FlightConnections;
   key date       : Date;
   aircraft       : String;
@@ -29,14 +29,14 @@ entity FlightConnections {
   distance    : Integer; // in kilometers
 }
 
-entity Airlines : cuid {
+entity Airlines : cuid, managed {
   name     : String;
   icon     : String;
   currency : Currency;
   flights  : Association to many FlightConnections on flights.airline = $self;
 }
 
-entity Airports : cuid {
+entity Airports : cuid, managed {
   name    : String;
   city    : String;
   country : Country;
@@ -44,7 +44,7 @@ entity Airports : cuid {
   departures : Association to many FlightConnections on departures.origin = $self;
 }
 
-entity Supplements : cuid {
+entity Supplements : cuid, managed {
   type     : Association to SupplementTypes;
   descr    : localized String(1111);
   price    : Decimal(9,4);
