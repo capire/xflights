@@ -278,10 +278,89 @@
           }
         }
       }
+    },
+    "sap.capire.flights.data.BookingCreated": {
+      "kind": "action",
+      "params": {
+        "flight": {
+          "type": {
+            "ref": [
+              "sap.capire.flights.data.Flights",
+              "ID"
+            ]
+          },
+          "length": 11
+        },
+        "date": {
+          "type": {
+            "ref": [
+              "sap.capire.flights.data.Flights",
+              "date"
+            ]
+          }
+        },
+        "seats": {
+          "items": {
+            "type": "cds.Integer"
+          }
+        }
+      }
+    },
+    "sap.capire.flights.data.BookingDeleted": {
+      "kind": "action",
+      "params": {
+        "flight": {
+          "type": {
+            "ref": [
+              "sap.capire.flights.data.Flights",
+              "ID"
+            ]
+          },
+          "length": 11
+        },
+        "date": {
+          "type": {
+            "ref": [
+              "sap.capire.flights.data.Flights",
+              "date"
+            ]
+          }
+        },
+        "seats": {
+          "items": {
+            "type": "cds.Integer"
+          }
+        }
+      }
+    },
+    "sap.capire.flights.data.FlightsUpdated": {
+      "kind": "event",
+      "elements": {
+        "flight": {
+          "type": {
+            "ref": [
+              "sap.capire.flights.data.Flights",
+              "ID"
+            ]
+          },
+          "length": 11
+        },
+        "date": {
+          "type": {
+            "ref": [
+              "sap.capire.flights.data.Flights",
+              "date"
+            ]
+          }
+        },
+        "free_seats": {
+          "type": "cds.Integer"
+        }
+      }
     }
   },
   "meta": {
-    "creator": "CDS Compiler v6.6.0",
+    "creator": "CDS Compiler v6.6.2",
     "flavor": "inferred",
     "minified": true
   },
