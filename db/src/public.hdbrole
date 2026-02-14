@@ -1,0 +1,98 @@
+{
+  "role": {
+    "name": "PUBLIC#",
+    "object_privileges": [
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_AIRLINES",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_AIRPORTS",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_COUNTRIES",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_COUNTRIES_TEXTS",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_CURRENCIES",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_CURRENCIES_TEXTS",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_FLIGHTS",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_LANGUAGES",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_LANGUAGES_TEXTS",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_SUPPLEMENTTYPES",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_SUPPLEMENTTYPES_TEXTS",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_SUPPLEMENTS",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      },
+      {
+        "name": "SAP_CAPIRE_FLIGHTS_DATA_SUPPLEMENTS_TEXTS",
+        "type": "VIEW",
+        "privileges_with_grant_option": [
+          "SELECT"
+        ]
+      }
+    ]
+  }
+}
