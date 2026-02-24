@@ -360,7 +360,7 @@
     }
   },
   "meta": {
-    "creator": "CDS Compiler v6.6.2",
+    "creator": "CDS Compiler v6.7.3",
     "flavor": "inferred",
     "minified": true
   },
