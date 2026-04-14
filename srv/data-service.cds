@@ -1,9 +1,10 @@
 using sap.capire.flights as x from '../db/schema';
+using from './workaround';
 
 /**
  * Master data service providing flight-related data, e.g. Flights, Airlines,
- * Airports, and Supplements (e.g. extra luggage, meals, etc.). 
- * Served as SAP data product, and protocols supported by CAP. 
+ * Airports, and Supplements (e.g. extra luggage, meals, etc.).
+ * Served as SAP data product, and protocols supported by CAP.
  */
 @data.product @hcql @rest @odata @graphql
 service sap.capire.flights.data {
@@ -33,21 +34,3 @@ service sap.capire.flights.data {
   action BookingDeleted ( flight: Flights:ID, date: Flights:date, seats: array of Integer);
   event FlightsUpdated  { flight: Flights:ID; date: Flights:date; free_seats: Integer; }
 }
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////////////
-//
-//  Workarounds for @cds.autoexpose kicking in too eagerly ...
-//
-//  - cds.autoexpose should only apply to UI/Fiori backend services, not API services
-//  - cds.autoexpose should be supported on individual assocs, not only targets
-//  - associations to stay in models for non-exposed targets -> currently skipped by 4odata
-//
-    annotate sap.common.Currencies with @cds.autoexpose:false;
-    annotate sap.common.Countries with @cds.autoexpose:false;
-    annotate sap.common.Languages with @cds.autoexpose:false;
-//
-//////////////////////////////////////////////////////////////////////////////////////////////////
