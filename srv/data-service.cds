@@ -1,5 +1,4 @@
 using sap.capire.flights as x from '../db/schema';
-using from './workaround';
 
 /**
  * Master data service providing flight-related data, e.g. Flights, Airlines,
@@ -34,3 +33,8 @@ service sap.capire.flights.data {
   action BookingDeleted ( flight: Flights:ID, date: Flights:date, seats: array of Integer);
   event FlightsUpdated  { flight: Flights:ID; date: Flights:date; free_seats: Integer; }
 }
+
+
+
+// Temporary workarounds
+using from './workaround';
