@@ -6,7 +6,7 @@
     "start": "cds-serve"
   },
   "dependencies": {
-    "@cap-js/hana": "^2.1.2",
+    "@cap-js/hana": ">=2.1.2",
     "@sap/cds": ">=9"
   },
   "devDependencies": {
