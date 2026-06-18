@@ -6,11 +6,15 @@
     "start": "cds-serve"
   },
   "dependencies": {
-    "@cap-js/hana": ">=2.1.2",
     "@sap/cds": ">=9"
   },
   "devDependencies": {
     "@cap-js/sqlite": ">=2"
+  },
+  "cds": {
+    "requires": {
+      "messaging": "file-based-messaging"
+    }
   },
   "license": "Apache-2.0"
 }
