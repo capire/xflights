@@ -3,9 +3,8 @@ using sap.capire.flights as x from '../db/schema';
 /**
  * Master data service providing flight-related data, e.g. Flights, Airlines,
  * Airports, and Supplements (e.g. extra luggage, meals, etc.).
- * Served as SAP data product, and protocols supported by CAP.
  */
-@data.product @hcql @rest @odata @graphql
+@hcql @rest @odata @graphql
 service sap.capire.flights.data {
 
   // Serve Flights data via denormalized view with flattened FlightConnections
