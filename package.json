@@ -7,11 +7,15 @@
     "update-data": "node db/data/update-dates.js"
   },
   "dependencies": {
-    "@cap-js/hana": ">=2.1.2",
     "@sap/cds": ">=9"
   },
   "devDependencies": {
     "@cap-js/sqlite": ">=2"
+  },
+  "cds": {
+    "requires": {
+      "messaging": "file-based-messaging"
+    }
   },
   "license": "Apache-2.0"
 }
