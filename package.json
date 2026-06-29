@@ -4,7 +4,7 @@
   "description": "CAP sample for master data service",
   "scripts": {
     "start": "cds-serve",
-    "update-flights-dates": "node scripts/update-flights-dates.js"
+    "update-data": "node db/data/update-dates.js"
   },
   "dependencies": {
     "@cap-js/hana": ">=2.1.2",

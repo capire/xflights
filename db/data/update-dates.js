@@ -22,8 +22,8 @@
 const fs = require('fs')
 const path = require('path')
 
-const DB_FLIGHTS  = path.resolve(__dirname, '..', 'db', 'data', 'sap.capire.flights-Flights.csv')
-const API_FLIGHTS = path.resolve(__dirname, '..', 'apis', 'data-service', 'data', 'sap.capire.flights.data.Flights.csv')
+const DB_FLIGHTS  = path.resolve(__dirname, 'sap.capire.flights-Flights.csv')
+const API_FLIGHTS = path.resolve(__dirname, '../../apis/data-service/data/sap.capire.flights.data.Flights.csv')
 
 const PAST_DAYS   = 60
 const FUTURE_DAYS = 90
