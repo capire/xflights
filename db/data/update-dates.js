@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 /**
  * update-flights-dates — refresh flight dates so the running app shows
  * a usable mix of past and upcoming flights.
