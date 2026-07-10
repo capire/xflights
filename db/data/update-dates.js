@@ -9,7 +9,7 @@
  *
  * Two CSV files are kept in sync (they share `(flight_ID/ID, date)` as key):
  *   1. db/data/sap.capire.flights-Flights.csv             (the source of truth)
- *   2. apis/data-service/data/sap.capire.flights.data.Flights.csv
+ *   2. apis/data-service/data/FlightsService.Flights.csv
  *      (the published data-service projection — uses `ID` instead of
  *      `flight_ID` and has additional columns; only the matching `date`
  *      values are copied across.)
@@ -24,7 +24,7 @@ const fs = require('fs')
 const path = require('path')
 
 const DB_FLIGHTS  = path.resolve(__dirname, 'sap.capire.flights-Flights.csv')
-const API_FLIGHTS = path.resolve(__dirname, '../../apis/data-service/data/sap.capire.flights.data.Flights.csv')
+const API_FLIGHTS = path.resolve(__dirname, '../../apis/data-service/data/FlightsService.Flights.csv')
 
 const PAST_DAYS   = 60
 const FUTURE_DAYS = 90

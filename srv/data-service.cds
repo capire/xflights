@@ -5,7 +5,7 @@ using sap.capire.flights as x from '../db/schema';
  * Airports, and Supplements (e.g. extra luggage, meals, etc.).
  */
 @hcql @rest @odata @graphql
-service sap.capire.flights.data {
+service FlightsService {
 
   // Serve Flights data via denormalized view with flattened FlightConnections
   @readonly entity Flights as select from x.Flights left join x.FlightConnections on ID = flight.ID {

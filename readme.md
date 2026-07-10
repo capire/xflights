@@ -24,7 +24,7 @@ The domain model is defined in [_db/schema.cds_](./db/schema.cds). It centers ar
 
 ## Service Interfaces
 
-Two service interfaces are defined in [_srv/admin-service.cds_](./srv/admin-service.cds), and [_srv/data-service.cds_](./srv/data-service.cds), to serve different use cases as shown below: 
+Two service interfaces are defined in [_srv/admin-service.cds_](./srv/admin-service.cds), and [_srv/data-service.cds_](./srv/data-service.cds), to serve different use cases as shown below:
 
 - an admin service to _maintain_ the master data from UIs or remote systems
 - a data service to _consume_ it from remote applications
@@ -32,18 +32,18 @@ Two service interfaces are defined in [_srv/admin-service.cds_](./srv/admin-serv
 ![](_docs/services.drawio.svg)
 
 
-> [!tip] 
+> [!tip]
 >
 > <details> <summary> Serving denormalized views </summary>
-> The data service exposes a denormalized view of `Flights` and associated `FlightConnections` data, essentially declared like that: 
+> The data service exposes a denormalized view of `Flights` and associated `FlightConnections` data, essentially declared like that:
 >
 > ```cds
-> entity Flights as projection on my.Flights { 
+> entity Flights as projection on my.Flights {
 >   *,          // all elements from Flights
 >   flight.*,   // all elements from FlightConnections
 > }
 > ```
-> 
+>
 > With that consumers aren't bothered with normalized data but can just consume flat data, looking like that:
 >
 > ![](_docs/data-service.drawio.svg)
@@ -64,7 +64,7 @@ We use `cds export` to create the API package, based on the Data Service definit
 cds export srv/data-service.cds
 ```
 
-This generates a separate CAP reuse package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the effective service API definitions, accompanied by automatically derived test data and i18n bundles. 
+This generates a separate CAP reuse package within subfolder [_apis/data-service_](./apis/data-service/) that contains only the effective service API definitions, accompanied by automatically derived test data and i18n bundles.
 
 ![](_docs/data-service-api.drawio.svg)
 
@@ -116,7 +116,7 @@ npm add @capire/xflights-data
 With that, we can use the imported models as usual, and as if they were local in mashups with our own entities like so:
 
 ```cds
-using { sap.capire.flights.data as imported } from '@capire/xflights-data';
+using { FlightsService as imported } from '@capire/xflights-data';
 entity TravelBookings { //...
   flight : Association to imported.Flights;
 }
@@ -134,7 +134,7 @@ Instead of exercising a workflow like that again and again:
 
 ... we can use *npm workspaces* technique to work locally and speed up things as follows:
 
-```shell 
+```shell
 mkdir -p cap/works; cd cap/works
 git clone https://github.com/capire/xflights
 git clone https://github.com/capire/xtravels
@@ -160,7 +160,7 @@ works@ ~/cap/works
   └── @capire/xflights-data@0.1.11 deduped -> ./xflights/apis/data-service
 ```
 
-Start the xtravels application → and note the sources loaded from *./xflights/apis/data-service*, and the information further below about the `sap.capire.flights.data` service mocked automatically:
+Start the xtravels application → and note the sources loaded from *./xflights/apis/data-service*, and the information further below about the `FlightsService` service mocked automatically:
 
 ```shell
 cds watch xtravels
@@ -178,7 +178,7 @@ cds watch xtravels
 ```
 
 ```zsh
-[cds] - mocking sap.capire.flights.data {
+[cds] - mocking FlightsService {
   at: [ '/odata/v4/data', '/rest/data', '/hcql/data' ],
   decl: 'xflights/apis/data-service/services.csn:3',
 }
@@ -231,7 +231,7 @@ using from '@capire/xflights/srv/data-service';
   }
   EOF
   ```
-  
+
   Take the same approach for the `index.cds` file:
   ```shell
   cat > xflights-api-shortcut/index.cds << EOF
@@ -259,7 +259,7 @@ works@ ~/cap/works
   └── @capire/xflights-data@ deduped -> ./xflights-api-shortcut≤
 ```
 
-Start the *xtravels* application → and note the sources loaded from *./xflights-api-shortcut*, and the information further below about the `sap.capire.flights.data` service now being _served_, not _mocked_ anymore:
+Start the *xtravels* application → and note the sources loaded from *./xflights-api-shortcut*, and the information further below about the `FlightsService` service now being _served_, not _mocked_ anymore:
 
 ```shell
 cds watch xtravels
@@ -273,12 +273,12 @@ cds watch xtravels
   xtravels/db/xflights.cds
   xflights-api-shortcut/index.cds
   xflights/srv/data-service.cds
-  xflights/db/schema.cds  
+  xflights/db/schema.cds
   ...
 ```
 
 ```zsh
-[cds] - serving sap.capire.flights.data {
+[cds] - serving FlightsService {
   at: [ '/odata/v4/data', '/rest/data', '/hcql/data' ],
   decl: 'xflights/apis/data-service/services.csn:3',
 }
