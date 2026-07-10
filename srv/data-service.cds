@@ -36,4 +36,4 @@ service sap.capire.flights.data {
 
 
 // Temporary workarounds
-using from './workaround';
+using from './.workarounds';
