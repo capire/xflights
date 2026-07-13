@@ -13,7 +13,7 @@
   },
   "cds": {
     "requires": {
-      "messaging": "file-based-messaging"
+      "messaging": true
     }
   },
   "license": "Apache-2.0"
