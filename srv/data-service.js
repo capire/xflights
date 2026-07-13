@@ -1,5 +1,5 @@
 const cds = require ('@sap/cds')
-class DataService extends cds.ApplicationService { async init() {
+class DataService extends cds.ApplicationService { init() {
 
   const { Flights } = cds.entities ('sap.capire.flights')
 
