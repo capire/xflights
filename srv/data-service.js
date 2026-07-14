@@ -11,6 +11,7 @@ class DataService extends cds.ApplicationService { init() {
       .where `free_seats >= ${seats.length}`
     if (!confirmed) req.reject('Flight is fully booked')
     LOG.info(`[${2}] Booking Confirmed: Reducing free seats by ${seats.length}`)
+    LOG.info(`[${3}] Emit FlightsUpdated for flight ${flight}`)
     this.emit('FlightsUpdated', { flight, date })
   })
 
