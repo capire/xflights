@@ -2,6 +2,7 @@ const cds = require ('@sap/cds')
 class DataService extends cds.ApplicationService { init() {
 
   const { Flights } = cds.entities ('sap.capire.flights')
+  const LOG = cds.log()
 
   this.on ('BookingCreated', async req => {
     const { flight, date, seats = [null] } = req.data
@@ -11,6 +12,7 @@ class DataService extends cds.ApplicationService { init() {
     if (!confirmed) req.reject('Flight is fully booked')
 
     const { free_seats } = await SELECT('free_seats').from(Flights, { flight_ID:flight, date })
+    LOG.info(`[${2}] Booking Confirmed: Change free seats to ${free_seats}`)
     this.emit('FlightsUpdated', { flight, date, free_seats })
   })
 
