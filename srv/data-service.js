@@ -10,9 +10,7 @@ class DataService extends cds.ApplicationService { init() {
       .set `occupied_seats = occupied_seats + ${seats.length}`
       .where `free_seats >= ${seats.length}`
     if (!confirmed) req.reject('Flight is fully booked')
-
     LOG.info(`[${2}] Booking Confirmed: Reducing free seats by ${seats.length}`)
-
     this.emit('FlightsUpdated', { flight, date })
   })
 
@@ -20,7 +18,6 @@ class DataService extends cds.ApplicationService { init() {
     const { flight, date, seats = [null] } = req.data
     await UPDATE (Flights, { flight_ID:flight, date })
       .set `occupied_seats = occupied_seats - ${seats.length}`
-
     this.emit('FlightsUpdated', { flight, date })
   })
 
