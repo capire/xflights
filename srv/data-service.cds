@@ -31,7 +31,8 @@ service sap.capire.flights.data {
   // Custom actions and events to sync with consumers about flight seat availability
   action BookingCreated ( flight: Flights:ID, date: Flights:date, seats: array of Integer);
   action BookingDeleted ( flight: Flights:ID, date: Flights:date, seats: array of Integer);
-  event FlightsUpdated  { flight: Flights:ID; date: Flights:date; free_seats: Integer; }
+  // Restrict payload to identity as messages can overtake each other (-> outdated payload)
+  event FlightsUpdated  { flight: Flights:ID; date: Flights:date; };
 }
 
 
