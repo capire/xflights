@@ -351,9 +351,6 @@
               "date"
             ]
           }
-        },
-        "free_seats": {
-          "type": "cds.Integer"
         }
       }
     }
