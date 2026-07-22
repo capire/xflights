@@ -39,6 +39,7 @@ jobs:
       - run: npm set //npm.pkg.github.com/:_authToken=${{ secrets.CAPIRE_READ_PACKAGES }}
         shell: bash
       - run: npm add -D @sap/cds-dk
+      - run: npm add @sap/xssec
       - run: npm install
       - run: npx cds up
 
