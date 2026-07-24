@@ -1,5 +1,6 @@
 .DS_Store
 *.sqlite
+*.mtar
 _out
 gen
 node_modules
