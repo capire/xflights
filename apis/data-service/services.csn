@@ -3,10 +3,12 @@
     "FlightsService": {
       "@source": "srv/data-service.cds",
       "kind": "service",
+      "doc": "Master data service providing flight-related data, e.g. Flights, Airlines,\nAirports, and Supplements (e.g. extra luggage, meals, etc.).",
       "@hcql": true,
       "@rest": true,
       "@odata": true,
       "@graphql": true,
+      "@mcp": true,
       "@cds.external": 2
     },
     "FlightsService.Flights": {

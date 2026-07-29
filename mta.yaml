@@ -1,0 +1,55 @@
+_schema-version: 3.3.0
+ID: capire.xflights
+version: 0.1.3
+description: "CAP XFlights master-data service (FlightsService provider)"
+parameters:
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm ci
+        - npx cds build --production
+modules:
+  - name: xflights-srv
+    type: nodejs
+    path: gen/srv
+    parameters:
+      instances: 1
+      buildpack: nodejs_buildpack
+      readiness-health-check-type: http
+      readiness-health-check-http-endpoint: /health
+      disk-quota: 512M
+      memory: 512M
+    build-parameters:
+      builder: npm-ci
+    provides:
+      - name: xflights-api # consumed by xtravels via destination
+        properties:
+          srv-url: ${default-url}
+    requires:
+      - name: xflights-db
+      - name: xflights-auth
+
+  - name: xflights-db-deployer
+    type: hdb
+    path: gen/db
+    parameters:
+      buildpack: nodejs_buildpack
+    requires:
+      - name: xflights-db
+
+resources:
+  - name: xflights-db
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+  - name: xflights-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: xsuaa
+      service-plan: application
+      config:
+        xsappname: xflights-${org}-${space}
+        tenant-mode: dedicated
