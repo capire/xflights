@@ -22,10 +22,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
       - uses: cap-js/cf-setup@v2
         with:
           api: ${{ vars.CF_API }}
@@ -37,10 +37,9 @@ jobs:
         shell: bash
       - run: npm set //npm.pkg.github.com/:_authToken=${{ secrets.CAPIRE_READ_PACKAGES }}
         shell: bash
-      - run: npm add -D @sap/cds-dk
-      - run: npm add @sap/xssec
-      - run: npm install
-      - run: npx cds up
+      - run: npm add -g @sap/cds-dk
+      - run: cds add xsuaa
+      - run: cds up
 
       - run: cf logs ${{ env.APP_NAME }}-srv --recent
         if: always()
