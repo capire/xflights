@@ -3,9 +3,7 @@
   "version": "1.2.3",
   "cds": {
     "requires": {
-      "FlightsService": {
-        "kind": "*"
-      }
+      "sap.capire.flights.FlightsService": true
     }
   }
 }

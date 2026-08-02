@@ -36,7 +36,7 @@ npm add @capire/xflights-data
 Then you can import and use the entities in your CDS models like this:
 
 ```cds
-using { FlightsService.Flights } from '@capire/xflights-data';
+using { sap.capire.flights.FlightsService.Flights } from '@capire/xflights-data';
 // mashup with your own entities ...
 ```
 Find examples for that in the [_xtravels_ application](https://github.com/capire/xtravels/blob/main/db/xflights.cds).
