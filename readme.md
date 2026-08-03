@@ -116,7 +116,7 @@ npm add @capire/xflights-data
 With that, we can use the imported models as usual, and as if they were local in mashups with our own entities like so:
 
 ```cds
-using { FlightsService as imported } from '@capire/xflights-data';
+using { sap.capire.flights.FlightsService as imported } from '@capire/xflights-data';
 entity TravelBookings { //...
   flight : Association to imported.Flights;
 }
@@ -178,7 +178,7 @@ cds watch xtravels
 ```
 
 ```zsh
-[cds] - mocking FlightsService {
+[cds] - mocking sap.capire.flights.FlightsService {
   at: [ '/odata/v4/data', '/rest/data', '/hcql/data' ],
   decl: 'xflights/apis/data-service/services.csn:3',
 }
@@ -278,7 +278,7 @@ cds watch xtravels
 ```
 
 ```zsh
-[cds] - serving FlightsService {
+[cds] - serving sap.capire.flights.FlightsService {
   at: [ '/odata/v4/data', '/rest/data', '/hcql/data' ],
   decl: 'xflights/apis/data-service/services.csn:3',
 }

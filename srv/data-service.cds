@@ -1,4 +1,5 @@
 using sap.capire.flights as x from '../db/schema';
+namespace sap.capire.flights;
 
 /**
  * Master data service providing flight-related data, e.g. Flights, Airlines,

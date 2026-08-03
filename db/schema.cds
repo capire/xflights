@@ -13,7 +13,7 @@ entity Flights : managed {
   currency       : Currency;
   maximum_seats  : Integer;
   occupied_seats : Integer; // partly transactional
-  free_seats     : Integer = maximum_seats - occupied_seats; 
+  free_seats     : Integer = maximum_seats - occupied_seats;
 }
 
 /**
@@ -45,13 +45,13 @@ entity Airports : cuid, managed {
 }
 
 entity Supplements : cuid, managed {
-  type     : Association to SupplementTypes;
+  type     : Association to Supplements.Types;
   descr    : localized String(1111);
   price    : Decimal(9,4);
   currency : Currency;
 }
 
-entity SupplementTypes : CodeList {
+entity Supplements.Types : CodeList {
   key code : String(2) enum {
     Beverage = 'BV';
     Meal = 'ML';

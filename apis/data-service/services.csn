@@ -1,6 +1,7 @@
 {
+  "namespace": "sap.capire.flights",
   "definitions": {
-    "FlightsService": {
+    "sap.capire.flights.FlightsService": {
       "@source": "srv/data-service.cds",
       "kind": "service",
       "doc": "Master data service providing flight-related data, e.g. Flights, Airlines,\nAirports, and Supplements (e.g. extra luggage, meals, etc.).",
@@ -11,7 +12,7 @@
       "@mcp": true,
       "@cds.external": 2
     },
-    "FlightsService.Flights": {
+    "sap.capire.flights.FlightsService.Flights": {
       "kind": "entity",
       "@readonly": true,
       "elements": {
@@ -70,15 +71,15 @@
         },
         "airline": {
           "type": "cds.Association",
-          "target": "FlightsService.Airlines"
+          "target": "sap.capire.flights.FlightsService.Airlines"
         },
         "origin": {
           "type": "cds.Association",
-          "target": "FlightsService.Airports"
+          "target": "sap.capire.flights.FlightsService.Airports"
         },
         "destination": {
           "type": "cds.Association",
-          "target": "FlightsService.Airports"
+          "target": "sap.capire.flights.FlightsService.Airports"
         },
         "departure": {
           "type": "cds.Time"
@@ -91,7 +92,7 @@
         }
       }
     },
-    "FlightsService.Airlines": {
+    "sap.capire.flights.FlightsService.Airlines": {
       "kind": "entity",
       "@readonly": true,
       "elements": {
@@ -121,7 +122,7 @@
           "cardinality": {
             "max": "*"
           },
-          "target": "FlightsService.Flights",
+          "target": "sap.capire.flights.FlightsService.Flights",
           "on": [
             {
               "ref": [
@@ -139,7 +140,7 @@
         }
       }
     },
-    "FlightsService.Airports": {
+    "sap.capire.flights.FlightsService.Airports": {
       "kind": "entity",
       "@readonly": true,
       "elements": {
@@ -169,7 +170,7 @@
           "cardinality": {
             "max": "*"
           },
-          "target": "FlightsService.Flights",
+          "target": "sap.capire.flights.FlightsService.Flights",
           "on": [
             {
               "ref": [
@@ -190,7 +191,7 @@
           "cardinality": {
             "max": "*"
           },
-          "target": "FlightsService.Flights",
+          "target": "sap.capire.flights.FlightsService.Flights",
           "on": [
             {
               "ref": [
@@ -208,7 +209,7 @@
         }
       }
     },
-    "FlightsService.Supplements": {
+    "sap.capire.flights.FlightsService.Supplements": {
       "kind": "entity",
       "@readonly": true,
       "elements": {
@@ -223,7 +224,7 @@
         },
         "type": {
           "type": "cds.Association",
-          "target": "FlightsService.SupplementTypes"
+          "target": "sap.capire.flights.FlightsService.Supplements.Types"
         },
         "descr": {
           "type": "cds.String",
@@ -242,7 +243,7 @@
         }
       }
     },
-    "FlightsService.SupplementTypes": {
+    "sap.capire.flights.FlightsService.Supplements.Types": {
       "kind": "entity",
       "@cds.autoexposed": true,
       "@cds.autoexpose": true,
@@ -280,13 +281,13 @@
         }
       }
     },
-    "FlightsService.BookingCreated": {
+    "sap.capire.flights.FlightsService.BookingCreated": {
       "kind": "action",
       "params": {
         "flight": {
           "type": {
             "ref": [
-              "FlightsService.Flights",
+              "sap.capire.flights.FlightsService.Flights",
               "ID"
             ]
           },
@@ -295,7 +296,7 @@
         "date": {
           "type": {
             "ref": [
-              "FlightsService.Flights",
+              "sap.capire.flights.FlightsService.Flights",
               "date"
             ]
           }
@@ -307,13 +308,13 @@
         }
       }
     },
-    "FlightsService.BookingDeleted": {
+    "sap.capire.flights.FlightsService.BookingDeleted": {
       "kind": "action",
       "params": {
         "flight": {
           "type": {
             "ref": [
-              "FlightsService.Flights",
+              "sap.capire.flights.FlightsService.Flights",
               "ID"
             ]
           },
@@ -322,7 +323,7 @@
         "date": {
           "type": {
             "ref": [
-              "FlightsService.Flights",
+              "sap.capire.flights.FlightsService.Flights",
               "date"
             ]
           }
@@ -334,13 +335,13 @@
         }
       }
     },
-    "FlightsService.FlightsUpdated": {
+    "sap.capire.flights.FlightsService.FlightsUpdated": {
       "kind": "event",
       "elements": {
         "flight": {
           "type": {
             "ref": [
-              "FlightsService.Flights",
+              "sap.capire.flights.FlightsService.Flights",
               "ID"
             ]
           },
@@ -349,7 +350,7 @@
         "date": {
           "type": {
             "ref": [
-              "FlightsService.Flights",
+              "sap.capire.flights.FlightsService.Flights",
               "date"
             ]
           }
@@ -358,7 +359,7 @@
     }
   },
   "meta": {
-    "creator": "CDS Compiler v7.0.2",
+    "creator": "CDS Compiler v7.0.3",
     "compilerCsnFlavor": "inferred",
     "flavor": "inferred",
     "minified": true
