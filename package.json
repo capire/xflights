@@ -7,7 +7,8 @@
   },
   "dependencies": {
     "@cap-js/hana": ">=2.1.2",
-    "@cap-js/mcp": "^1",
+    "@cap-js/agents": "*",
+    "@cap-js/mcp": "*",
     "@sap/cds": ">=9"
   },
   "devDependencies": {
@@ -15,6 +16,7 @@
   },
   "cds": {
     "requires": {
+      "llm": "anthropic",
       "messaging": true
     }
   },
