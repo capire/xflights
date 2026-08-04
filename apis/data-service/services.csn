@@ -10,6 +10,7 @@
       "@odata": true,
       "@graphql": true,
       "@mcp": true,
+      "@agent": true,
       "@cds.external": 2
     },
     "sap.capire.flights.FlightsService.Flights": {
@@ -281,7 +282,7 @@
         }
       }
     },
-    "sap.capire.flights.FlightsService.BookingCreated": {
+    "sap.capire.flights.FlightsService.ReserveSeats": {
       "kind": "action",
       "params": {
         "flight": {
@@ -308,7 +309,7 @@
         }
       }
     },
-    "sap.capire.flights.FlightsService.BookingDeleted": {
+    "sap.capire.flights.FlightsService.ReleaseSeats": {
       "kind": "action",
       "params": {
         "flight": {

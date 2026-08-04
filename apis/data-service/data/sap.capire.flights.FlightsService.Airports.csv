@@ -1,49 +1,49 @@
 ID,modifiedAt,name,city,country_code
-FRA,2026-08-03T12:46:39.663Z,Frankfurt Airport,Frankfurt/Main,DE
-HAM,2026-08-03T12:46:39.663Z,Hamburg Airport,Hamburg,DE
-MUC,2026-08-03T12:46:39.663Z,Munich Airport,Munich,DE
-SXF,2026-08-03T12:46:39.663Z,Berlin Schönefeld Airport,Berlin,DE
-THF,2026-08-03T12:46:39.663Z,Berlin Tempelhof Airport,Berlin,DE
-TXL,2026-08-03T12:46:39.663Z,Berlin Tegel Airport,Berlin,DE
-CDG,2026-08-03T12:46:39.663Z,Charles de Gaulle Airport,Paris,FR
-ORY,2026-08-03T12:46:39.663Z,Orly Airport,Paris,FR
-VIE,2026-08-03T12:46:39.663Z,Vienna International Airport,Vienna,AT
-ZRH,2026-08-03T12:46:39.663Z,Zürich Airport,Zurich,CH
-RTM,2026-08-03T12:46:39.663Z,Rotterdam The Hague Airport,Rotterdam,NL
-FCO,2026-08-03T12:46:39.663Z,Leonardo da Vinci–Fiumicino Airport,Rome,IT
-VCE,2026-08-03T12:46:39.663Z,Venice Marco Polo Airport,Venice,IT
-LCY,2026-08-03T12:46:39.663Z,London City Airport,London,GB
-LGW,2026-08-03T12:46:39.663Z,Gatwick Airport,London,GB
-LHR,2026-08-03T12:46:39.663Z,Heathrow Airport,London,GB
-MAD,2026-08-03T12:46:39.663Z,Adolfo Suárez Madrid–Barajas Airport,Madrid,ES
-VKO,2026-08-03T12:46:39.663Z,Vnukovo International Airport,Moscow,RU
-SVO,2026-08-03T12:46:39.663Z,Sheremetyevo International Airport,Moscow,RU
-JFK,2026-08-03T12:46:39.663Z,John F. Kennedy International Airport,"New York City,New York",US
-BNA,2026-08-03T12:46:39.663Z,Nashville International Airport,"Nashville,Tennessee",US
-BOS,2026-08-03T12:46:39.663Z,Logan International Airport,"Boston,Massachusetts",US
-ELP,2026-08-03T12:46:39.663Z,El Paso International Airport,"El Paso,Texas",US
-DEN,2026-08-03T12:46:39.663Z,Denver International Airport,"Denver,Colorado",US
-HOU,2026-08-03T12:46:39.663Z,William P. Hobby Airport,"Houston,Texas",US
-LAS,2026-08-03T12:46:39.663Z,McCarran International Airport,"Las Vegas,Nevada",US
-LAX,2026-08-03T12:46:39.663Z,Los Angeles International Airport,"Los Angeles,California",US
-MCI,2026-08-03T12:46:39.663Z,Kansas City International Airport,"Kansas City,Missouri",US
-MIA,2026-08-03T12:46:39.663Z,Miami International Airport,"Miami,Florida",US
-SFO,2026-08-03T12:46:39.663Z,San Francisco International Airport,"San Francisco,California",US
-EWR,2026-08-03T12:46:39.663Z,Newark Liberty International Airport,"Newark,New Jersey",US
-YOW,2026-08-03T12:46:39.663Z,Ottawa Macdonald–Cartier Int. Airport,"Ottawa,Ontario",CA
-ACA,2026-08-03T12:46:39.663Z,General Juan N. Álvarez Int. Airport,"Acapulco,Guerrero",MX
-GIG,2026-08-03T12:46:39.663Z,Rio de Janeiro–Galeão Int. Airport,Rio de Janeiro,BR
-HAV,2026-08-03T12:46:39.663Z,José Martí International Airport,Havana,CU
-ASP,2026-08-03T12:46:39.663Z,Alice Springs Airport,"Alice Springs,Northern Territory",AU
-ACE,2026-08-03T12:46:39.663Z,Lanzarote Airport,"Lanzarote,Canary Islands",ES
-HRE,2026-08-03T12:46:39.663Z,Harare International Airport,Harare,ZW
-GCJ,2026-08-03T12:46:39.663Z,Grand Central Airport,Johannesburg,ZA
-NRT,2026-08-03T12:46:39.663Z,Narita International Airport,"Tokyo,Honshu",JP
-ITM,2026-08-03T12:46:39.663Z,Osaka International Airport,"Osaka,Honshu",JP
-KIX,2026-08-03T12:46:39.663Z,Kansai International Airport,"Osaka,Honshu",JP
-HIJ,2026-08-03T12:46:39.663Z,Hiroshima Airport,"Hiroshima,Honshu",JP
-SIN,2026-08-03T12:46:39.663Z,Singapore Changi Airport,Singapore,SG
-KUL,2026-08-03T12:46:39.663Z,Kuala Lumpur International Airport,Kuala Lumpur,MY
-HKG,2026-08-03T12:46:39.663Z,Hong Kong International Airport,Hongkong,CN
-BKK,2026-08-03T12:46:39.663Z,Suvarnabhumi Airport,Bangkok,TH
-MCO,2026-08-03T12:46:39.663Z,Orlando International Airport,Orlando,US
+FRA,2026-08-04T14:13:32.184Z,Frankfurt Airport,Frankfurt/Main,DE
+HAM,2026-08-04T14:13:32.184Z,Hamburg Airport,Hamburg,DE
+MUC,2026-08-04T14:13:32.184Z,Munich Airport,Munich,DE
+SXF,2026-08-04T14:13:32.184Z,Berlin Schönefeld Airport,Berlin,DE
+THF,2026-08-04T14:13:32.184Z,Berlin Tempelhof Airport,Berlin,DE
+TXL,2026-08-04T14:13:32.184Z,Berlin Tegel Airport,Berlin,DE
+CDG,2026-08-04T14:13:32.184Z,Charles de Gaulle Airport,Paris,FR
+ORY,2026-08-04T14:13:32.184Z,Orly Airport,Paris,FR
+VIE,2026-08-04T14:13:32.184Z,Vienna International Airport,Vienna,AT
+ZRH,2026-08-04T14:13:32.184Z,Zürich Airport,Zurich,CH
+RTM,2026-08-04T14:13:32.184Z,Rotterdam The Hague Airport,Rotterdam,NL
+FCO,2026-08-04T14:13:32.184Z,Leonardo da Vinci–Fiumicino Airport,Rome,IT
+VCE,2026-08-04T14:13:32.184Z,Venice Marco Polo Airport,Venice,IT
+LCY,2026-08-04T14:13:32.184Z,London City Airport,London,GB
+LGW,2026-08-04T14:13:32.184Z,Gatwick Airport,London,GB
+LHR,2026-08-04T14:13:32.184Z,Heathrow Airport,London,GB
+MAD,2026-08-04T14:13:32.184Z,Adolfo Suárez Madrid–Barajas Airport,Madrid,ES
+VKO,2026-08-04T14:13:32.184Z,Vnukovo International Airport,Moscow,RU
+SVO,2026-08-04T14:13:32.184Z,Sheremetyevo International Airport,Moscow,RU
+JFK,2026-08-04T14:13:32.184Z,John F. Kennedy International Airport,"New York City,New York",US
+BNA,2026-08-04T14:13:32.184Z,Nashville International Airport,"Nashville,Tennessee",US
+BOS,2026-08-04T14:13:32.184Z,Logan International Airport,"Boston,Massachusetts",US
+ELP,2026-08-04T14:13:32.184Z,El Paso International Airport,"El Paso,Texas",US
+DEN,2026-08-04T14:13:32.184Z,Denver International Airport,"Denver,Colorado",US
+HOU,2026-08-04T14:13:32.184Z,William P. Hobby Airport,"Houston,Texas",US
+LAS,2026-08-04T14:13:32.184Z,McCarran International Airport,"Las Vegas,Nevada",US
+LAX,2026-08-04T14:13:32.184Z,Los Angeles International Airport,"Los Angeles,California",US
+MCI,2026-08-04T14:13:32.184Z,Kansas City International Airport,"Kansas City,Missouri",US
+MIA,2026-08-04T14:13:32.184Z,Miami International Airport,"Miami,Florida",US
+SFO,2026-08-04T14:13:32.184Z,San Francisco International Airport,"San Francisco,California",US
+EWR,2026-08-04T14:13:32.184Z,Newark Liberty International Airport,"Newark,New Jersey",US
+YOW,2026-08-04T14:13:32.184Z,Ottawa Macdonald–Cartier Int. Airport,"Ottawa,Ontario",CA
+ACA,2026-08-04T14:13:32.184Z,General Juan N. Álvarez Int. Airport,"Acapulco,Guerrero",MX
+GIG,2026-08-04T14:13:32.184Z,Rio de Janeiro–Galeão Int. Airport,Rio de Janeiro,BR
+HAV,2026-08-04T14:13:32.184Z,José Martí International Airport,Havana,CU
+ASP,2026-08-04T14:13:32.184Z,Alice Springs Airport,"Alice Springs,Northern Territory",AU
+ACE,2026-08-04T14:13:32.184Z,Lanzarote Airport,"Lanzarote,Canary Islands",ES
+HRE,2026-08-04T14:13:32.184Z,Harare International Airport,Harare,ZW
+GCJ,2026-08-04T14:13:32.184Z,Grand Central Airport,Johannesburg,ZA
+NRT,2026-08-04T14:13:32.184Z,Narita International Airport,"Tokyo,Honshu",JP
+ITM,2026-08-04T14:13:32.184Z,Osaka International Airport,"Osaka,Honshu",JP
+KIX,2026-08-04T14:13:32.184Z,Kansai International Airport,"Osaka,Honshu",JP
+HIJ,2026-08-04T14:13:32.184Z,Hiroshima Airport,"Hiroshima,Honshu",JP
+SIN,2026-08-04T14:13:32.184Z,Singapore Changi Airport,Singapore,SG
+KUL,2026-08-04T14:13:32.184Z,Kuala Lumpur International Airport,Kuala Lumpur,MY
+HKG,2026-08-04T14:13:32.184Z,Hong Kong International Airport,Hongkong,CN
+BKK,2026-08-04T14:13:32.184Z,Suvarnabhumi Airport,Bangkok,TH
+MCO,2026-08-04T14:13:32.184Z,Orlando International Airport,Orlando,US
