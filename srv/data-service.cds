@@ -31,7 +31,7 @@ service FlightsService {
   // Custom actions and events to sync with consumers about flight seat availability
   action BookingCreated ( flight: Flights:ID, date: Flights:date, seats: array of Integer);
   action BookingDeleted ( flight: Flights:ID, date: Flights:date, seats: array of Integer);
-  event FlightsUpdated  { flight: Flights:ID; date: Flights:date; free_seats: Integer; }
+  event FlightsUpdated  { flight: Flights:ID; date: Flights:date; };
 }
 
 

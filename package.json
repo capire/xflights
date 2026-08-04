@@ -13,5 +13,10 @@
   "devDependencies": {
     "@cap-js/sqlite": ">=2"
   },
+  "cds": {
+    "requires": {
+      "messaging": true
+    }
+  },
   "license": "Apache-2.0"
 }
