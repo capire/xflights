@@ -10,7 +10,6 @@
       "@odata": true,
       "@graphql": true,
       "@mcp": true,
-      "@agent": true,
       "@cds.external": 2
     },
     "sap.capire.flights.FlightsService.Flights": {
