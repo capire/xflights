@@ -16,7 +16,6 @@
   },
   "cds": {
     "requires": {
-      "llm": "anthropic",
       "messaging": true
     }
   },
