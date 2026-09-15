@@ -145,14 +145,15 @@
       "kind": "entity",
       "@readonly": true,
       "elements": {
-        "ID": {
-          "key": true,
-          "type": "cds.UUID"
-        },
         "modifiedAt": {
           "@title": "{i18n>ChangedAt}",
           "@readonly": true,
           "type": "cds.Timestamp"
+        },
+        "ID": {
+          "key": true,
+          "type": "sap.capire.flights.IATA",
+          "length": 3
         },
         "name": {
           "type": "cds.String"
@@ -209,6 +210,11 @@
           ]
         }
       }
+    },
+    "sap.capire.flights.IATA": {
+      "kind": "type",
+      "type": "cds.String",
+      "length": 3
     },
     "sap.capire.flights.FlightsService.Supplements": {
       "kind": "entity",
@@ -360,7 +366,7 @@
     }
   },
   "meta": {
-    "creator": "CDS Compiler v7.0.3",
+    "creator": "CDS Compiler v7.1.1",
     "compilerCsnFlavor": "inferred",
     "flavor": "inferred",
     "minified": true
