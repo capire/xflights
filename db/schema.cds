@@ -36,11 +36,12 @@ entity Airlines : cuid, managed {
   flights  : Association to many FlightConnections on flights.airline = $self;
 }
 
-entity Airports : cuid, managed {
-  name    : String;
-  city    : String;
-  country : Country;
-  arrivals : Association to many FlightConnections on arrivals.destination = $self;
+entity Airports : managed {
+  key ID     : IATA /** IATA code, e.g. FRA */;
+  name       : String;
+  city       : String;
+  country    : Country;
+  arrivals   : Association to many FlightConnections on arrivals.destination = $self;
   departures : Association to many FlightConnections on departures.origin = $self;
 }
 
@@ -59,3 +60,5 @@ entity Supplements.Types : CodeList {
     Extra = 'EX';
   }
 }
+
+type IATA : String(3); // e.g. FRA
