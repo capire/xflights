@@ -5,7 +5,7 @@ namespace sap.capire.flights;
  * Master data service providing flight-related data, e.g. Flights, Airlines,
  * Airports, and Supplements (e.g. extra luggage, meals, etc.).
  */
-@hcql @rest @odata @graphql @mcp
+@hcql @rest @odata @graphql @mcp @agent
 service FlightsService {
 
   // Serve Flights data via denormalized view with flattened FlightConnections
