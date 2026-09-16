@@ -25,8 +25,9 @@ service FlightsService {
   } excluding { createdAt, createdBy, modifiedBy };
 
   // Serve Supplements data as is
-  @readonly entity Supplements as projection on x.Supplements
-  excluding { createdAt, createdBy, modifiedBy };
+  @readonly entity Supplements as projection on x.Supplements {
+    *, type.name as type,
+  } excluding { createdAt, createdBy, modifiedBy };
 
   // Custom actions and events to sync with consumers about flight seat availability
   action ReserveSeats ( flight: Flights:ID, date: Flights:date, seats: array of Integer);

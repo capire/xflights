@@ -229,8 +229,9 @@
           "type": "cds.Timestamp"
         },
         "type": {
-          "type": "cds.Association",
-          "target": "sap.capire.flights.FlightsService.Supplements.Types"
+          "@title": "{i18n>Name}",
+          "type": "cds.String",
+          "length": 255
         },
         "descr": {
           "type": "cds.String",
@@ -246,44 +247,6 @@
           "@description": "{i18n>CurrencyCode.Description}",
           "type": "Currency",
           "target": "sap.common.Currencies"
-        }
-      }
-    },
-    "sap.capire.flights.FlightsService.Supplements.Types": {
-      "kind": "entity",
-      "@cds.autoexposed": true,
-      "@cds.autoexpose": true,
-      "@cds.persistence.skip": "if-unused",
-      "@cds.odata.valuelist": true,
-      "elements": {
-        "name": {
-          "@title": "{i18n>Name}",
-          "type": "cds.String",
-          "length": 255
-        },
-        "descr": {
-          "@title": "{i18n>Description}",
-          "type": "cds.String",
-          "length": 1000
-        },
-        "code": {
-          "key": true,
-          "type": "cds.String",
-          "length": 2,
-          "enum": {
-            "Beverage": {
-              "val": "BV"
-            },
-            "Meal": {
-              "val": "ML"
-            },
-            "Luggage": {
-              "val": "LU"
-            },
-            "Extra": {
-              "val": "EX"
-            }
-          }
         }
       }
     },
