@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "@cap-js/hana": ">=2.1.2",
-    "@cap-js/mcp": "^1",
     "@sap/cds": ">=9"
   },
   "devDependencies": {
