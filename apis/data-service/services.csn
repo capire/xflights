@@ -250,8 +250,9 @@
         }
       }
     },
-    "sap.capire.flights.FlightsService.ReserveSeats": {
+    "sap.capire.flights.FlightsService.reserveSeats": {
       "kind": "action",
+      "doc": "Custom actions and events for managing flight seat availability from a leading\napplication like the Xtravels app. Do not call these actions directly from UIs\nor agents.",
       "params": {
         "flight": {
           "type": {
@@ -277,7 +278,7 @@
         }
       }
     },
-    "sap.capire.flights.FlightsService.ReleaseSeats": {
+    "sap.capire.flights.FlightsService.releaseSeats": {
       "kind": "action",
       "params": {
         "flight": {
@@ -325,10 +326,80 @@
           }
         }
       }
+    },
+    "sap.capire.flights.FlightsService.bookFlight": {
+      "kind": "action",
+      "doc": "Use this action to book a flight for a passenger with the specified seats.\nIt calls the reserveSeats action internally.",
+      "params": {
+        "passenger": {
+          "@mandatory": true,
+          "type": "cds.String"
+        },
+        "flight": {
+          "@mandatory": true,
+          "type": {
+            "ref": [
+              "sap.capire.flights.FlightsService.Flights",
+              "ID"
+            ]
+          },
+          "length": 11
+        },
+        "date": {
+          "@mandatory": true,
+          "type": {
+            "ref": [
+              "sap.capire.flights.FlightsService.Flights",
+              "date"
+            ]
+          }
+        },
+        "seats": {
+          "@mandatory": true,
+          "items": {
+            "type": "cds.Integer"
+          }
+        }
+      },
+      "returns": {
+        "elements": {
+          "bookingId": {
+            "type": "cds.UUID"
+          },
+          "total": {
+            "type": "cds.Decimal",
+            "precision": 9,
+            "scale": 4
+          },
+          "currency": {
+            "@title": "{i18n>CurrencyCode}",
+            "@Common.Text": {
+              "=": "name"
+            },
+            "type": {
+              "ref": [
+                "sap.capire.flights.FlightsService.Flights",
+                "currency",
+                "code"
+              ]
+            },
+            "length": 3
+          }
+        }
+      }
+    },
+    "sap.capire.flights.FlightsService.cancelBooking": {
+      "kind": "action",
+      "doc": "Use this action to cancel a booking.\nIt calls the releaseSeats action internally if applicable.",
+      "params": {
+        "bookingId": {
+          "type": "cds.UUID"
+        }
+      }
     }
   },
   "meta": {
-    "creator": "CDS Compiler v7.1.1",
+    "creator": "CDS Compiler v7.2.1",
     "compilerCsnFlavor": "inferred",
     "flavor": "inferred",
     "minified": true

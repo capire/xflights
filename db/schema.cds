@@ -61,4 +61,15 @@ entity Supplements.Types : CodeList {
   }
 }
 
+entity Bookings : cuid, managed {
+  passenger    : String;
+  flight       : Association to Flights;
+  seats        : array of Integer;
+  status       : String(1) enum {
+    Confirmed = 'C';
+    Cancelled = 'X';
+  };
+  total        : Decimal(9,4);
+}
+
 type IATA : String(3); // e.g. FRA
