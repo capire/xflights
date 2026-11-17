@@ -40,7 +40,7 @@ class DataService extends cds.ApplicationService { init() {
       || req.reject (404, `Booking ${bookingId} not found`)
     const { flight_ID, flight_date, seats } = booking
     await this.releaseSeats({ flight: flight_ID, date: flight_date, seats })
-    await UPDATE (Bookings, bookingId).set({ status:'C' })
+    await UPDATE (Bookings, bookingId).set({ status:'X' })
   })
 
   return super.init()
